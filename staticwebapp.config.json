@@ -2,5 +2,11 @@
     "navigationFallback": {
         "rewrite": "/index.html"
     },
-    { "platform": { "apiRuntime": "python:3.10" } }
+    { "platform": { "apiRuntime": "python:3.10" } },
+  "routes": [
+    {
+      "route": "/*",
+      "allowedRoles": ["authenticated"]
+    }
+  ]
 }
