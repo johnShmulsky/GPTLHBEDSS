@@ -4,7 +4,7 @@ import json
 
 default_json = {
     "FIRST_NAME":"John",
-    "LAST_NAME":"DOE",
+    "LAST_NAME":"Doe",
     "HOMEPHONE":"605-555-5555",
     "CITY":"Rapid City",
     "STREET":"100 First Avenue",
