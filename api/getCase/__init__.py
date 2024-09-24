@@ -64,8 +64,7 @@ default_model = {
     "INVESTIGATIONS_HEADER":{
         "MESSAGE":"Labs Section",
         "TYPE":"SectionHeader"
-    }
-    ],    
+    },    
     "Type": {
         "MESSAGE": "Disease Type",
         "TYPE": "String",
