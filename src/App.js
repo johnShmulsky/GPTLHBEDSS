@@ -1,7 +1,7 @@
 import React from 'react';
 
 function App() {
-  const {value} = await( await fetch(`/api/test`)).json();
+  const {value} = fetch(`/api/test`).json();
   return <div>Hello {value}</div>;
 }
 
