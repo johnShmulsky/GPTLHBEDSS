@@ -20,7 +20,6 @@ client_secret = os.environ['AZURE_CLIENT_SECRET_APP_SETTING_NAME']
 app = msal.ConfidentialClientApplication(
     client_id,
     authority=authority, 
-    oidc_authority=oidc_authority, 
     client_credential=client_secret,
     )
 
