@@ -34,7 +34,6 @@ const EditPatientBox = ({ patient }) => {
       borderRadius={5}
       p={5}
       //   bg="#eff6f9"
-      border="1px solid black"
     >
       <SimpleGrid columns={4} spacing={5}>
         <Box>

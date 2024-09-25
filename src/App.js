@@ -1,9 +1,14 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./Components/Header/Navbar";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Home from "./pages/Home Page/Home";
-import PatientPage from "./pages/Patient Page";
+import {
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from "react-router-dom";
+import Home from "./pages/HomePage/Home";
+import PatientPage from "./pages/Case";
 
 function App() {
   return (
@@ -11,8 +16,8 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Home />} />
+          <Route path="/" element={<Navigate to="/index.html" />} />
+          <Route path="/index.html" element={<Home />} />
           <Route path="/Cases" element={<PatientPage />} />
         </Routes>
       </Router>

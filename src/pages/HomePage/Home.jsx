@@ -1,10 +1,19 @@
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import bgImage from "../../media/bannerImg.jpg";
-import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate();
+  const handleLogin = () => {
+    console.log("hello login");
+    window.location.href =
+      "https://proud-flower-0e4c3191e.5.azurestaticapps.net";
+  };
+
+  useEffect(() => {
+    fetch("https://proud-flower-0e4c3191e.5.azurestaticapps.net/api/getuser")
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <Box position="relative">
@@ -29,11 +38,11 @@ const Home = () => {
                   bg="#460000"
                   color="white"
                   _hover={{ background: "#460000" }}
-                  onClick={() => navigate("/Cases")}
+                  onClick={() => handleLogin()}
                   borderRadius="none"
                   width="100%"
                 >
-                  Proceed to EDSS
+                  Sign in
                 </Button>
               </Box>
             </Box>
