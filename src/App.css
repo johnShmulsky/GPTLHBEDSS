@@ -1,0 +1,72 @@
+.App {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow-x: hidden;
+  font-family: "Fira Sans Condensed", sans-serif;
+}
+
+/* .css-ltvq84 {
+  padding: 0 !important;
+} */
+
+/* pagination css */
+.item {
+  align-items: center;
+  color: "white";
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.disabled-page {
+  color: white;
+}
+
+.active {
+  border: solid 1px white;
+  border-radius: 50%;
+  color: white;
+}
+
+.break-me {
+}
+
+.next {
+  border-left: solid 1px white;
+  font-size: 4px;
+  height: 28px;
+  position: absolute;
+  right: 0;
+  width: 40px;
+}
+
+.pagination {
+  align-items: center;
+  background-color: #460000;
+  display: flex;
+  flex-direction: row;
+  height: 45px;
+  justify-content: center;
+  list-style-type: none;
+  position: relative;
+  width: 200px;
+  color: white;
+}
+
+.pagination-page {
+  font-weight: 700;
+}
+
+.previous {
+  border-right: solid 1px white;
+  font-size: 4px;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  width: 40px;
+}
