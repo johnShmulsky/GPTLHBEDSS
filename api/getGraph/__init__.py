@@ -35,9 +35,11 @@ def getGraphData():
         graph_data = requests.get(  # Use token to call downstream service
             endpoint,
             headers={'Authorization': 'Bearer ' + result['access_token']}, ).json()
+    else:
+        graph_data = {"OOPS":"NO TOKEN"}
     return graph_data
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     #TODO Check reddis cache for existing user information
     
-    return func.HttpResponse(getGraphData())
+    return func.HttpResponse(json.dumps(getGraphData(),indent=4))
