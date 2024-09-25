@@ -9,7 +9,7 @@ import msal
 # config
 scopes = ["https://graph.microsoft.com/.default"]
 endpoint=  "https://graph.microsoft.com/v1.0/users"
-authority = '704bef3c-134c-430e-860d-b9b9baa16039'
+authority = 'https://login.microsoftonline.com/704bef3c-134c-430e-860d-b9b9baa16039'
 oidc_authority = 'https://login.microsoftonline.com/704bef3c-134c-430e-860d-b9b9baa16039/v2.0'
 
 # Values from app registration
