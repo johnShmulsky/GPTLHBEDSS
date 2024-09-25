@@ -16,17 +16,21 @@ oidc_authority = None
 client_id = os.environ['AZURE_CLIENT_ID']
 client_secret = os.environ['AZURE_CLIENT_SECRET_APP_SETTING_NAME']
 
+app = None
 
-app = msal.ConfidentialClientApplication(
-    client_id,
-    authority=authority,
-    oidc_authority=oidc_authority,
-    client_credential=client_secret,
-    )
-
-access_token = None
+def getApp():
+    newApp = msal.ConfidentialClientApplication(
+        client_id,
+        authority=authority,
+        oidc_authority=oidc_authority,
+        client_credential=client_secret,
+        )
+    return newApp
 
 def getGraphData():
+    global app
+    if app is None:
+        app = getApp()
     result = app.acquire_token_silent(config["scope"], account=None)
     if not result:
         result = app.acquire_token_for_client(scopes=config["scope"])
