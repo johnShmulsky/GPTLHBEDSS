@@ -16,24 +16,20 @@ oidc_authority = None
 client_id = os.environ['AZURE_CLIENT_ID']
 client_secret = os.environ['AZURE_CLIENT_SECRET_APP_SETTING_NAME']
 
-app = None
 
-def getApp():
-    newApp = msal.ConfidentialClientApplication(
-        client_id,
-        authority=authority,
-        oidc_authority=oidc_authority,
-        client_credential=client_secret,
-        )
-    return newApp
+app = msal.ConfidentialClientApplication(
+    client_id,
+    authority=authority,
+    oidc_authority=oidc_authority,
+    client_credential=client_secret,
+    )
+
+access_token = None
 
 def getGraphData():
-    global app
-    if app is None:
-        app = getApp()
-    result = app.acquire_token_silent(config["scope"], account=None)
+    result = app.acquire_token_silent(scopes, account=None)
     if not result:
-        result = app.acquire_token_for_client(scopes=config["scope"])
+        result = app.acquire_token_for_client(scopes=scopes)
     if "access_token" in result:
         # Calling graph using the access token
         graph_data = requests.get(  # Use token to call downstream service
