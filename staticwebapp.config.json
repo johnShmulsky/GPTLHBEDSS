@@ -1,0 +1,29 @@
+{
+    "navigationFallback": {
+        "rewrite": "/index.html"
+    },
+  "platform": { "apiRuntime": "python:3.10" },
+  "routes": [
+    {
+      "route": "/*",
+      "allowedRoles": ["authenticated"]
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "statusCode": 302,
+      "redirect": "/.auth/login/aad"
+    }
+  },
+ "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/704bef3c-134c-430e-860d-b9b9baa16039/v2.0",
+          "clientIdSettingName": "AZURE_CLIENT_ID",
+          "clientSecretSettingName": "AZURE_CLIENT_SECRET_APP_SETTING_NAME"
+        }
+      }
+    }
+  }
+}
