@@ -10,7 +10,7 @@ import msal
 scopes = ["https://graph.microsoft.com/.default"]
 endpoint=  "https://graph.microsoft.com/v1.0/users"
 authority = 'https://login.microsoftonline.com/704bef3c-134c-430e-860d-b9b9baa16039'
-oidc_authority = 'https://login.microsoftonline.com/704bef3c-134c-430e-860d-b9b9baa16039/v2.0'
+oidc_authority = None
 
 # Values from app registration
 client_id = os.environ['AZURE_CLIENT_ID']
@@ -19,7 +19,8 @@ client_secret = os.environ['AZURE_CLIENT_SECRET_APP_SETTING_NAME']
 
 app = msal.ConfidentialClientApplication(
     client_id,
-    authority=authority, 
+    authority=authority,
+    oidc_authority=oidc_authority,
     client_credential=client_secret,
     )
 
@@ -40,5 +41,8 @@ def getGraphData():
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     #TODO Check reddis cache for existing user information
-    
-    return func.HttpResponse(json.dumps(getGraphData(),indent=4))
+    try:
+        retrunVal = json.dumps(getGraphData(),indent=4)
+    except Exception as ex:
+        returnVal = ex.message
+    return func.HttpResponse(retrunVal)
