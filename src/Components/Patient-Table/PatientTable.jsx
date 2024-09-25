@@ -47,6 +47,7 @@ const PatientTable = () => {
   };
   const handleEdit = (patient, index) => {
     setEditAbleData(patient);
+    console.log(editableData);
     if (expandRow === index) {
       setExpandRow(null);
     } else {

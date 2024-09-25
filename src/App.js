@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import PatientTable from "./Components/Patient-Table/PatientTable";
+import React from "react";
 import "./App.css";
 import Navbar from "./Components/Header/Navbar";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "./pages/Home Page/Home";
-import ProtectedRoute from "./utils/ProtectedRoute";
 import PatientPage from "./pages/Patient Page";
 
 function App() {

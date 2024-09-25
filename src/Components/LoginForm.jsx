@@ -1,19 +1,8 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  FormLabel,
-  Heading,
-  Input,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
-import React, { useState } from "react";
+import { Box, Button, Text } from "@chakra-ui/react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const isAuthenticated = localStorage.getItem("isAuthenticated");
   const handleLogin = () => {
@@ -57,7 +46,7 @@ const LoginForm = () => {
                 borderRadius="none"
                 width="100%"
               >
-                Check case
+                log In
               </Button>
             </Box>
           )}

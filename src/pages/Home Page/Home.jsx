@@ -1,7 +1,6 @@
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 import bgImage from "../../media/bannerImg.jpg";
-import LoginForm from "../../Components/LoginForm";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {

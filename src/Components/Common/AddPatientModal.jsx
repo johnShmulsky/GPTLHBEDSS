@@ -47,7 +47,7 @@ function AddPatientModal({ isOpen, onClose }) {
           <ModalHeader> Add New Case</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            {step == 1 ? (
+            {step === 1 ? (
               <SimpleGrid columns={2} spacing={5}>
                 <Box>
                   <Text mb={1}>First Name</Text>
@@ -163,7 +163,7 @@ function AddPatientModal({ isOpen, onClose }) {
             <Button colorScheme="red" mr={3} onClick={onClose}>
               Cancel
             </Button>
-            {step == 1 ? (
+            {step === 1 ? (
               <Button
                 bg="#460000"
                 color="white"

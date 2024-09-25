@@ -11,10 +11,7 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Radio,
-  RadioGroup,
   SimpleGrid,
-  Stack,
   Text,
 } from "@chakra-ui/react";
 import medication from "../../Data/medication.json";
@@ -22,9 +19,7 @@ import ReactSearchBox from "react-search-box";
 import { AddIcon, DeleteIcon, SearchIcon } from "@chakra-ui/icons";
 
 // eslint-disable-next-line react/prop-types
-function EditPaitentModal({ isOpen, onClose, editData }) {
-  const [step, setStep] = useState(1);
-  const [tribalLandOption, setTribalLandOption] = useState("no");
+function EditPaitentModal({ isOpen, onClose }) {
   const [rows, setRows] = useState([{ id: 1, date: "", medication: "" }]);
 
   const handleAddRow = () => {
@@ -33,9 +28,6 @@ function EditPaitentModal({ isOpen, onClose, editData }) {
 
   const handleDeleteRow = (id) => {
     setRows(rows.filter((row) => row.id !== id));
-  };
-  const handleNext = () => {
-    setStep(2);
   };
 
   return (

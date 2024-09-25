@@ -1,24 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Box,
-  Flex,
-  Text,
-  IconButton,
-  Stack,
-  useDisclosure,
-  Image,
-} from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-
+import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import logo from "../../media/images.jpg";
 
 const Navbar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const isAuthenticated = localStorage.getItem("isAuthenticated");
-  const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated");
-  };
   return (
     <Box bg="#460000" color="white" px={4} py={5}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
