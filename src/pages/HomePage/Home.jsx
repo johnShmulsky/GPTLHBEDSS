@@ -10,7 +10,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetch("https://proud-flower-0e4c3191e.5.azurestaticapps.net/api/getuser")
+    fetch("/api/getuser")
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }, []);
