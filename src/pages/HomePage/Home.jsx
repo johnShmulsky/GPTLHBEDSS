@@ -4,18 +4,24 @@ import bgImage from "../../media/bannerImg.jpg";
 
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const handleLogin = () => {
     console.log("hello login");
     window.location.href =
       "/.auth/login/aad";
+    setIsLoading(true);
   };
   const [userData, setUserData] = useState(null);
+  
   
   useEffect(() => {
     fetch("/api/getuser")
       .then(response => response.json())
-      .then(json => setUserData(json)) 
-      .catch((err) => console.log(err));
+      .then(json => {
+        setUserData(json)
+        setIsLoading(false)})
+      .catch((err) => setIsLoading(false));
+    
   }, []);
 
   return (
@@ -32,7 +38,7 @@ const Home = () => {
             <Box mb={5}>
               <Box>
                 <Text textAlign="left" fontSize="40px" fontWeight={700} mb={5}>
-                  {userData ?(<Text> Hi {userData.displayName} </Text>): (<Button bg="#460000" color="white" _hover={{ background: "#460000" }} onClick={() => handleLogin()} borderRadius="none" width="100%" > Sign in </Button>)}
+                  {isLoading ? <LoadingSpinner /> :{userData ?(<Text> Hi {userData.displayName} </Text>): (<Button bg="#460000" color="white" _hover={{ background: "#460000" }} onClick={() => handleLogin()} borderRadius="none" width="100%" disabled={isLoading} > Sign in </Button>)}}
                 </Text>
               </Box>
             </Box>
