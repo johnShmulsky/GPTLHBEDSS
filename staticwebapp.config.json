@@ -3,10 +3,23 @@
         "rewrite": "/index.html"
     },
   "platform": { "apiRuntime": "python:3.10" },
+  "trailingSlash": "auto", 
   "routes": [
     {
-      "route": "/*",
+      "route": "/api/getCase",
       "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/api/getUser",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/api/publicTest*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/index.html",
+      "allowedRoles": ["anonymous"]
     }
   ],
   "responseOverrides": {
