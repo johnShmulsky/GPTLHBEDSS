@@ -6,7 +6,6 @@ import os
 import requests
 import msal
 import aiohttp
-import asyncio
 
 # config
 scopes = ["https://graph.microsoft.com/.default"]
@@ -26,6 +25,7 @@ app = msal.ConfidentialClientApplication(
     client_credential=client_secret,
     )
 
+access_token = None
 
 def getAppToken(principalName):
     result = app.acquire_token_silent(scopes, account=None)
@@ -37,17 +37,21 @@ def getAppToken(principalName):
         return None
 
 async def main(req: func.HttpRequest) -> func.HttpResponse:
+    headersAsDict = dict(req.headers)
+    clientPrincipal64=headersAsDict.get('x-ms-client-principal','')
+    base64_bytes = clientPrincipal64.encode("ascii")
+    principal_string_bytes = base64.b64decode(base64_bytes)
+    principal_string = principal_string_bytes.decode("ascii")
+    principal = json.loads(principal_string)
+    result = getAppToken(principal['userDetails'])
+    userData = {}
     try:
-        headersAsDict = dict(req.headers)
-        clientPrincipal64=headersAsDict.get('x-ms-client-principal','')
-        base64_bytes = clientPrincipal64.encode("ascii")
-        principal_string_bytes = base64.b64decode(base64_bytes)
-        principal_string = principal_string_bytes.decode("ascii")
-        principal = json.loads(principal_string)
-        result = getAppToken(principal['userDetails'])
-        userData = {"displayName":"test user"}
-    
-        return func.HttpResponse(json.dumps(userData,indent=4))
+        async with aiohttp.ClientSession() as client:
+            headers={'Authorization': 'Bearer ' + result['access_token']}
+            async with client.get( endpoint.format(principal['userDetails']),headers=headers) as response:
+                userData = await response.json()    
     except Exception as ex:
        return func.HttpResponse(ex.message)     
-
+        
+    principal['displayName']=userData['displayName']
+    return func.HttpResponse(json.dumps(principal,indent=4))
