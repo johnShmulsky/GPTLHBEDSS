@@ -8,7 +8,7 @@ import msal
 
 # config
 scopes = ["https://graph.microsoft.com/.default"]
-endpoint=  "https://graph.microsoft.com/v1.0/users/ac9d7679-9e49-4155-8ca0-de3d321fa722"
+endpoint=  "https://graph.microsoft.com/v1.0/users/John.Shmulsky@gpthd.org"
 authority = 'https://login.microsoftonline.com/704bef3c-134c-430e-860d-b9b9baa16039'
 oidc_authority = None
 
