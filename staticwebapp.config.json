@@ -18,6 +18,10 @@
       "allowedRoles": ["anonymous"]
     },
     {
+      "route": "/cases",
+      "allowedRoles": ["authenticated"]
+    },
+    {
       "route": "/index.html",
       "allowedRoles": ["anonymous"]
     }
