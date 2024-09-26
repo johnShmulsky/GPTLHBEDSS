@@ -7,7 +7,7 @@ import LoadingSpinner from "../../LoadingSpinner";
 const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
   const handleLogin = () => {
-    console.log("hello login");
+    console.log("hello login with spinner");
     window.location.href =
       "/.auth/login/aad";
     setIsLoading(true);
