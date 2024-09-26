@@ -38,7 +38,7 @@ const Home = () => {
                   Hello,
                 </Text>
                 <Text textAlign="left" fontSize="40px" fontWeight={700} mb={5}>
-                  {userData ? (userData.displayName) : (<Text> No User <Text/>)}
+                  {userData ? userData.displayName : <NoUser/>}
                 </Text>
                 <Button
                   bg="#460000"
