@@ -5,6 +5,7 @@ import base64
 import os
 import requests
 import msal
+import aiohttp
 
 # config
 scopes = ["https://graph.microsoft.com/.default"]
@@ -26,26 +27,27 @@ app = msal.ConfidentialClientApplication(
 
 access_token = None
 
-def getGraphData(principalName):
+def getAppToken(principalName):
     result = app.acquire_token_silent(scopes, account=None)
     if not result:
         result = app.acquire_token_for_client(scopes=scopes)
     if "access_token" in result:
-        # Calling graph using the access token
-        graph_data = requests.get(  # Use token to call downstream service
-            endpoint.format(principalName),
-            headers={'Authorization': 'Bearer ' + result['access_token']}, ).json()
+        return result
     else:
-        graph_data = {"displayName":"NO TOKEN"}
-    return graph_data
+        return None
 
-def main(req: func.HttpRequest) -> func.HttpResponse:
+async def main(req: func.HttpRequest) -> func.HttpResponse:
     headersAsDict = dict(req.headers)
     clientPrincipal64=headersAsDict.get('x-ms-client-principal','')
     base64_bytes = clientPrincipal64.encode("ascii")
     principal_string_bytes = base64.b64decode(base64_bytes)
     principal_string = principal_string_bytes.decode("ascii")
     principal = json.loads(principal_string)
-    userData = getGraphData(principal['userDetails'])
+    result = getAppToken(principal['userDetails'])
+    userData = {}
+    async with aiohttp.ClientSession() as client:
+        headers={'Authorization': 'Bearer ' + result['access_token']}
+        async with client.get( endpoint.format(principalName),headers=headers) as response:
+            userData = await respnse.json()    
     principal['displayName']=userData['displayName']
     return func.HttpResponse(json.dumps(principal,indent=4))
