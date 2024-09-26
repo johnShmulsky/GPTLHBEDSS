@@ -8,11 +8,12 @@ const Home = () => {
     window.location.href =
       "https://proud-flower-0e4c3191e.5.azurestaticapps.net";
   };
-
+  const [userData, setUserData] = useState(null);
+  
   useEffect(() => {
     fetch("/api/getuser")
       .then(response => response.json())
-      .then(json => console.log('parsed json', json)) 
+      .then(json => setUserData(json)) 
       .catch((err) => console.log(err));
   }, []);
 
@@ -33,7 +34,7 @@ const Home = () => {
                   Hello,
                 </Text>
                 <Text textAlign="left" fontSize="40px" fontWeight={700} mb={5}>
-                  John Shmulsky
+                  {userData.displayName}
                 </Text>
                 <Button
                   bg="#460000"
