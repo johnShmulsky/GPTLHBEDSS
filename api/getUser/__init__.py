@@ -6,6 +6,7 @@ import os
 import requests
 import msal
 import aiohttp
+import asyncio
 
 # config
 scopes = ["https://graph.microsoft.com/.default"]
@@ -25,7 +26,6 @@ app = msal.ConfidentialClientApplication(
     client_credential=client_secret,
     )
 
-access_token = None
 
 def getAppToken(principalName):
     result = app.acquire_token_silent(scopes, account=None)
@@ -45,7 +45,7 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
         principal_string = principal_string_bytes.decode("ascii")
         principal = json.loads(principal_string)
         result = getAppToken(principal['userDetails'])
-        userData = {}
+        userData = {"displayName":"test user"}
     
         async with aiohttp.ClientSession() as client:
             headers={'Authorization': 'Bearer ' + result['access_token']}
