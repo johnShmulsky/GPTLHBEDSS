@@ -37,15 +37,16 @@ def getAppToken(principalName):
         return None
 
 async def main(req: func.HttpRequest) -> func.HttpResponse:
-    headersAsDict = dict(req.headers)
-    clientPrincipal64=headersAsDict.get('x-ms-client-principal','')
-    base64_bytes = clientPrincipal64.encode("ascii")
-    principal_string_bytes = base64.b64decode(base64_bytes)
-    principal_string = principal_string_bytes.decode("ascii")
-    principal = json.loads(principal_string)
-    result = getAppToken(principal['userDetails'])
-    userData = {}
     try:
+        headersAsDict = dict(req.headers)
+        clientPrincipal64=headersAsDict.get('x-ms-client-principal','')
+        base64_bytes = clientPrincipal64.encode("ascii")
+        principal_string_bytes = base64.b64decode(base64_bytes)
+        principal_string = principal_string_bytes.decode("ascii")
+        principal = json.loads(principal_string)
+        result = getAppToken(principal['userDetails'])
+        userData = {}
+    
         async with aiohttp.ClientSession() as client:
             headers={'Authorization': 'Bearer ' + result['access_token']}
             async with client.get( endpoint.format(principalName),headers=headers) as response:
@@ -53,6 +54,4 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
                 return func.HttpResponse(json.dumps(await response.json() ,indent=4))
     except Exception as ex:
        return func.HttpResponse(ex.message)     
-        
-    principal['displayName']=userData['displayName']
-    return func.HttpResponse(json.dumps(principal,indent=4))
+
