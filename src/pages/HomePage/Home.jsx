@@ -2,10 +2,6 @@ import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import bgImage from "../../media/bannerImg.jpg";
 
-function SignIn(){
-  return ;
-}
-
 
 const Home = () => {
   const handleLogin = () => {
