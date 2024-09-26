@@ -16,6 +16,7 @@ const Home = () => {
   
   
   useEffect(() => {
+    setIsLoading(true);
     fetch("/api/getuser")
       .then(response => response.json())
       .then(json => {
