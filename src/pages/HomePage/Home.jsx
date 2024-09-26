@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     fetch("/api/getuser")
       .then(response => response.json())
-      .then(json => {console.log('parsed json', json) 
+      .then(json => console.log('parsed json', json) 
       .catch((err) => console.log(err));
   }, []);
 
