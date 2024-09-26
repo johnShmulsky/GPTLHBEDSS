@@ -15,7 +15,7 @@ const Home = () => {
       .then(json => {console.log('parsed json', json) 
       .catch((err) => console.log(err));
     
-  },[])
+  },[]);
 
   return (
     <Box position="relative">
