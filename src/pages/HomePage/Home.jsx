@@ -10,7 +10,7 @@ const Home = () => {
   const handleLogin = () => {
     console.log("hello login");
     window.location.href =
-      "https://proud-flower-0e4c3191e.5.azurestaticapps.net";
+      "/.auth/login/aad";
   };
   const [userData, setUserData] = useState(null);
   
