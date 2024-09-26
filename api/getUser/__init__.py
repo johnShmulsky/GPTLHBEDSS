@@ -45,9 +45,13 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
     principal = json.loads(principal_string)
     result = getAppToken(principal['userDetails'])
     userData = {}
-    async with aiohttp.ClientSession() as client:
-        headers={'Authorization': 'Bearer ' + result['access_token']}
-        async with client.get( endpoint.format(principalName),headers=headers) as response:
-            userData = await respnse.json()    
+    try:
+        async with aiohttp.ClientSession() as client:
+            headers={'Authorization': 'Bearer ' + result['access_token']}
+            async with client.get( endpoint.format(principalName),headers=headers) as response:
+                userData = await respnse.json()    
+    except Exception as ex:
+       return func.HttpResponse(ex.message)     
+        
     principal['displayName']=userData['displayName']
     return func.HttpResponse(json.dumps(principal,indent=4))
