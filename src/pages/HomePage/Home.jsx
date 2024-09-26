@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import bgImage from "../../media/bannerImg.jpg";
 
 const Home = () => {
@@ -34,7 +34,7 @@ const Home = () => {
                   Hello,
                 </Text>
                 <Text textAlign="left" fontSize="40px" fontWeight={700} mb={5}>
-                  {userData.displayName}
+                  {userData ? userData.displayName : No User}
                 </Text>
                 <Button
                   bg="#460000"
