@@ -49,7 +49,7 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
         async with aiohttp.ClientSession() as client:
             headers={'Authorization': 'Bearer ' + result['access_token']}
             async with client.get( endpoint.format(principalName),headers=headers) as response:
-                userData = await respnse.json()    
+                userData = await response.json()    
     except Exception as ex:
        return func.HttpResponse(ex.message)     
         
