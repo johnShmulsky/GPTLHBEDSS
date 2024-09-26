@@ -32,7 +32,7 @@ const Home = () => {
             <Box mb={5}>
               <Box>
                 <Text textAlign="left" fontSize="40px" fontWeight={700} mb={5}>
-                  {userData ? userData.displayName : (<Button bg="#460000" color="white" _hover={{ background: "#460000" }} onClick={() => handleLogin()} borderRadius="none" width="100%" > Sign in </Button>)}
+                  {userData ?(<Text> Hi {userData.displayName} </Text>): (<Button bg="#460000" color="white" _hover={{ background: "#460000" }} onClick={() => handleLogin()} borderRadius="none" width="100%" > Sign in </Button>)}
                 </Text>
               </Box>
             </Box>
