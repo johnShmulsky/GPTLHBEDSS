@@ -2,6 +2,10 @@ import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import bgImage from "../../media/bannerImg.jpg";
 
+function NoUser(){
+  return "No User";
+}
+
 const Home = () => {
   const handleLogin = () => {
     console.log("hello login");
@@ -34,7 +38,7 @@ const Home = () => {
                   Hello,
                 </Text>
                 <Text textAlign="left" fontSize="40px" fontWeight={700} mb={5}>
-                  {userData ? userData.displayName : No User}
+                  {userData ? userData.displayName : <NoUser/>}
                 </Text>
                 <Button
                   bg="#460000"
