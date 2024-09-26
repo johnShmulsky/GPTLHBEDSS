@@ -11,11 +11,9 @@ const Home = () => {
 
   useEffect(() => {
     fetch("/api/getuser")
-      .then(response => response.json())
-      .then(json => {console.log('parsed json', json) 
+      .then((res) => console.log(res))
       .catch((err) => console.log(err));
-    
-  },[]);
+  }, []);
 
   return (
     <Box position="relative">
