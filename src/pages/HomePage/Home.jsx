@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import bgImage from "../../media/bannerImg.jpg";
+import LoadingSpinner from "../../LoadingSpinner";
 
 
 const Home = () => {
