@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Aspirin",
+    "subTitle": "Aspirin sub title",
+    "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+  },
+  {
+    "id": 2,
+    "title": "Ibuprofen",
+    "subTitle": "Ibuprofen sub title",
+    "desc": "Ibuprofen is a nonsteroidal anti-inflammatory drug (NSAID) used for relieving pain, reducing fever, and decreasing inflammation. It is commonly used to treat headaches, muscle aches, arthritis, and menstrual cramps."
+  },
+  {
+    "id": 3,
+    "title": "Paracetamol",
+    "subTitle": "Paracetamol sub title",
+    "desc": "Paracetamol, also known as acetaminophen, is a medication used to treat pain and fever. It is typically used for mild to moderate pain relief and is often found in combination with other medications."
+  },
+  {
+    "id": 4,
+    "title": "Naproxen",
+    "subTitle": "Naproxen sub title",
+    "desc": "Naproxen is an NSAID used to relieve pain and inflammation in conditions such as arthritis, muscle aches, and menstrual cramps. It works by reducing hormones that cause inflammation and pain in the body."
+  },
+  {
+    "id": 5,
+    "title": "Diclofenac",
+    "subTitle": "Diclofenac sub title",
+    "desc": "Diclofenac is an NSAID used to treat pain and inflammatory disorders such as arthritis. It is available in various forms, including tablets, gels, and injections."
+  },
+  {
+    "id": 6,
+    "title": "Celecoxib",
+    "subTitle": "Celecoxib sub title",
+    "desc": "Celecoxib is a COX-2 inhibitor used to treat pain and inflammation associated with arthritis and other conditions. It works by blocking the enzyme that produces prostaglandins, which cause inflammation and pain."
+  },
+  {
+    "id": 7,
+    "title": "Meloxicam",
+    "subTitle": "Meloxicam sub title",
+    "desc": "Meloxicam is an NSAID used to treat pain and inflammation in conditions such as arthritis. It works by reducing the production of substances in the body that cause inflammation and pain."
+  },
+  {
+    "id": 8,
+    "title": "Tramadol",
+    "subTitle": "Tramadol sub title",
+    "desc": "Tramadol is a pain reliever used to treat moderate to severe pain. It works by changing the way the brain and nervous system respond to pain."
+  },
+  {
+    "id": 9,
+    "title": "Codeine",
+    "subTitle": "Codeine sub title",
+    "desc": "Codeine is an opioid pain medication used to treat mild to moderately severe pain. It is often combined with other medications, such as acetaminophen, to enhance pain relief."
+  },
+  {
+    "id": 10,
+    "title": "Hydrocodone",
+    "subTitle": "Hydrocodone sub title",
+    "desc": "Hydrocodone is an opioid pain medication used to treat severe pain. It is often combined with acetaminophen or ibuprofen to enhance its pain-relieving effects."
+  },
+  {
+    "id": 11,
+    "title": "Oxycodone",
+    "subTitle": "Oxycodone sub title",
+    "desc": "Oxycodone is an opioid pain medication used to treat moderate to severe pain. It works by changing the way the brain and nervous system respond to pain."
+  }
+]

@@ -14,7 +14,7 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import medication from "../../Data/medication.json";
+import medication from "../../demoData/medication.json";
 import ReactSearchBox from "react-search-box";
 import { AddIcon, DeleteIcon, SearchIcon } from "@chakra-ui/icons";
 

@@ -19,7 +19,7 @@ import {
 } from "@chakra-ui/react";
 import ReactSearchBox from "react-search-box";
 import { AddIcon, DeleteIcon, SearchIcon } from "@chakra-ui/icons";
-import medication from "../../Data/medication.json";
+import medication from "../../demoData/medication.json";
 
 // eslint-disable-next-line react/prop-types
 function AddPatientModal({ isOpen, onClose }) {

@@ -22,7 +22,7 @@ const Navbar = () => {
             lineHeight="30px"
             color="white"
           >
-            Great Plains <br /> Tribal Leaders' Health Board
+            Great Plains <br /> Tribal Leaders Health Board
           </Text>
         </Box>
 
@@ -36,6 +36,17 @@ const Navbar = () => {
               _hover={{ borderBottom: "2px solid black" }}
             >
               Home
+            </Text>
+          </Link>
+          <Link to="/Data">
+            <Text
+              color="white"
+              px={2}
+              py={1}
+              rounded="md"
+              _hover={{ borderBottom: "2px solid black" }}
+            >
+              Data
             </Text>
           </Link>
           <Link to="/Cases">

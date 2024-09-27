@@ -3,54 +3,85 @@ import React, { useEffect, useState } from "react";
 import bgImage from "../../media/bannerImg.jpg";
 import LoadingSpinner from "../../LoadingSpinner";
 
-
 const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
   const handleLogin = () => {
     console.log("hello login with spinner");
-    window.location.href =
-      "/.auth/login/aad";
+    window.location.href = "/.auth/login/aad";
     setIsLoading(true);
   };
   const [userData, setUserData] = useState(null);
-  
-  
+
   useEffect(() => {
     setIsLoading(true);
     fetch("/api/getuser")
-      .then(response => response.json())
-      .then(json => {
-        setUserData(json)
-        setIsLoading(false)})
-      .catch((err) => setIsLoading(false));
-    
+      .then((response) => response.json())
+      .then((json) => {
+        setUserData(json);
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
   }, []);
 
   return (
     <Box position="relative">
       <Flex width="100%" height="550px">
-        <Box width="100%" height="100%" bg="#F0ECE3">
-          <Box
-            p={5}
-            mt={12}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Box mb={5}>
+        <Box
+          width="100%"
+          height="100%"
+          bg="#F0ECE3"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Box p={5} mt={12}>
+            {isLoading ? (
+              <LoadingSpinner />
+            ) : userData ? (
               <Box>
-                <Text textAlign="left" fontSize="40px" fontWeight={700} mb={5}>
-                  {isLoading ? 
-                    <LoadingSpinner /> :
-                    userData ?
-                      (<Text> Hi {userData.displayName} </Text>): 
-                      (<Button bg="#460000" color="white" _hover={{ background: "#460000" }} onClick={() => handleLogin()} borderRadius="none" width="100%" disabled={isLoading} > Sign in </Button>)
-                  }
-                  
-                  
+                <Text fontSize="25px" fontWeight={600} color="black">
+                  Hi,
+                </Text>
+                <Text
+                  fontSize="28px"
+                  lineHeight="42px"
+                  fontWeight={600}
+                  color="black"
+                >
+                  {userData.displayName}
+                </Text>
+                <Text
+                  fontSize="28px"
+                  lineHeight="42px"
+                  fontWeight={600}
+                  color="black"
+                >
+                  {userData.userDetails}
+                </Text>
+                <Text
+                  fontSize="28px"
+                  lineHeight="42px"
+                  fontWeight={600}
+                  color="black"
+                >
+                  {userData.userDetails.userRoles[0]},
+                  {userData.userDetails.userRoles[1]}
                 </Text>
               </Box>
-            </Box>
+            ) : (
+              <Button
+                fontSize="25px"
+                width="200px"
+                height="60px"
+                bg="#460000"
+                color="white"
+                _hover={{ background: "#460000" }}
+                onClick={() => handleLogin()}
+                disabled={isLoading}
+              >
+                Sign in
+              </Button>
+            )}
           </Box>
         </Box>
         <Box

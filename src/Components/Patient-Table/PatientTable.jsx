@@ -16,8 +16,7 @@ import {
   Tr,
   useDisclosure,
 } from "@chakra-ui/react";
-import PatientData from "../../Data/PatientData.json";
-
+import PatientData from "../../demoData/PatientData.json";
 import {
   ArrowBackIcon,
   ArrowForwardIcon,
