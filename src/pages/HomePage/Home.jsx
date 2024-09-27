@@ -64,8 +64,7 @@ const Home = () => {
                   fontWeight={600}
                   color="black"
                 >
-                  {userData.userDetails.userRoles[0]},
-                  {userData.userDetails.userRoles[1]}
+                  {userData?.userRoles[0]},{userData?.userRoles[1]}
                 </Text>
               </Box>
             ) : (
