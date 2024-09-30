@@ -19,7 +19,7 @@ import Img2 from "../../media/img2.png";
 import Img3 from "../../media/img3.png";
 import Img4 from "../../media/img4.png";
 import pbi from "../../media/PowerBi.png";  
-import static from "../../media/Static.png";
+import staticImg from "../../media/Static.png";
 import linelist from "../../media/LineList.png";
 import tableau from "../../media/Tableau.png";
 
@@ -46,7 +46,7 @@ const demoData = [
     subTitle: "Pictures, Brochures, or PDF presentations of compiled data and reports",
     desc: "Non-interactive published material can be disseminated as well",
     img: Img3,
-    cardImg: static
+    cardImg: staticImg
   },
   {
     id: 4,
