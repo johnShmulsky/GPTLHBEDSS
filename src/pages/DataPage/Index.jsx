@@ -22,30 +22,30 @@ import Img4 from "../../media/img4.png";
 const demoData = [
   {
     id: 1,
-    title: "Aspirin",
-    subTitle: "Aspirin sub title",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+    title: "Power BI Dashboard",
+    subTitle: "Sample Dashboard with disease rates",
+    desc: "Power BI Dashboards, powered and goverend by fabric, can be dynamically shown here",
     img: Img1,
   },
   {
     id: 2,
-    title: "Ibuprofen",
-    subTitle: "Ibuprofen sub title",
-    desc: "Ibuprofen is a nonsteroidal anti-inflammatory drug (NSAID) used for relieving pain, reducing fever, and decreasing inflammation. It is commonly used to treat headaches, muscle aches, arthritis, and menstrual cramps.",
+    title: "Line List",
+    subTitle: "Sample Line Data",
+    desc: "Line List data sets produced via Fabric can be displayed, explored, and exported by credentialed users",
     img: Img2,
   },
   {
     id: 3,
-    title: "Paracetamol",
-    subTitle: "Paracetamol sub title",
-    desc: "Paracetamol, also known as acetaminophen, is a medication used to treat pain and fever. It is typically used for mild to moderate pain relief and is often found in combination with other medications.",
+    title: "Static Report Content",
+    subTitle: "Pictures, Brochures, or PDF presentations of compiled data and reports",
+    desc: "Non-interactive published material can be disseminated as well",
     img: Img3,
   },
   {
     id: 4,
-    title: "Omiprasol",
-    subTitle: "Omiprasol sub title",
-    desc: "Omiprasol, also known as acetaminophen, is a medication used to treat pain and fever. It is typically used for mild to moderate pain relief and is often found in combination with other medications.",
+    title: "Tabluea Dashboard",
+    subTitle: "Example Table 1",
+    desc: "Server hosted dashboards and reports with security provided via the identity provider",
     img: Img4,
   },
 ];
@@ -66,7 +66,7 @@ const DataHomePage = () => {
             {demoData.map((item, index) => (
               <Tooltip
                 key={index}
-                label={item.subTitle}
+                label={item.desc}
                 placement="bottom-end"
                 hasArrow
                 color="white"
