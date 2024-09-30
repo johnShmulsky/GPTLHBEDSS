@@ -11,9 +11,6 @@ import {
   ModalOverlay,
 } from "@chakra-ui/react";
 import React from "react";
-import Img1 from "../../media/stats.png";
-import Img2 from "../../media/img2.png";
-import Img3 from "../../media/img3.png";
 
 // eslint-disable-next-line react/prop-types
 const DataCardModal = ({ isOpen, onClose, data }) => {
@@ -34,7 +31,7 @@ const DataCardModal = ({ isOpen, onClose, data }) => {
           <ModalCloseButton color="white" />
           <ModalBody>
             <Image
-              src={data.id === 1 ? Img1 : data.id === 2 ? Img2 : Img3}
+              src={data.img}
               height="100%"
               width="100%"
               objectFit="cover"
