@@ -14,6 +14,7 @@ import {
 import React, { useState } from "react";
 import cardImg from "../../media/cardImg.jpg";
 import DataCardModal from "../../Components/Common/DataCardModal";
+import Img1 from "../../media/stats.png";
 import Img2 from "../../media/img2.png";
 import Img3 from "../../media/img3.png";
 import Img4 from "../../media/img4.png";
@@ -24,7 +25,7 @@ const demoData = [
     title: "Aspirin",
     subTitle: "Aspirin sub title",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
-    img: "../../media/stats.png",
+    img: Img1,
   },
   {
     id: 2,
