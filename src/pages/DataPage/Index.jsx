@@ -43,7 +43,7 @@ const demoData = [
   },
   {
     id: 4,
-    title: "Tabluea Dashboard",
+    title: "Tableau Dashboard",
     subTitle: "Example Table 1",
     desc: "Server hosted dashboards and reports with security provided via the identity provider",
     img: Img4,
