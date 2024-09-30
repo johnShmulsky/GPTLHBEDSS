@@ -18,6 +18,10 @@ import Img1 from "../../media/stats.png";
 import Img2 from "../../media/img2.png";
 import Img3 from "../../media/img3.png";
 import Img4 from "../../media/img4.png";
+import pbi from "../../media/PowerBi.png";  
+import static from "../../media/Static.png";
+import linelist from "../../media/LineList.png";
+import tableau from "../../media/Tableau.png";
 
 const demoData = [
   {
@@ -26,6 +30,7 @@ const demoData = [
     subTitle: "Sample Dashboard with disease rates",
     desc: "Power BI Dashboards, powered and goverend by fabric, can be dynamically shown here",
     img: Img1,
+    cardImg: pbi
   },
   {
     id: 2,
@@ -33,6 +38,7 @@ const demoData = [
     subTitle: "Sample Line Data",
     desc: "Line List data sets produced via Fabric can be displayed, explored, and exported by credentialed users",
     img: Img2,
+    cardImg: linelist
   },
   {
     id: 3,
@@ -40,6 +46,7 @@ const demoData = [
     subTitle: "Pictures, Brochures, or PDF presentations of compiled data and reports",
     desc: "Non-interactive published material can be disseminated as well",
     img: Img3,
+    cardImg: static
   },
   {
     id: 4,
@@ -47,6 +54,7 @@ const demoData = [
     subTitle: "Example Table 1",
     desc: "Server hosted dashboards and reports with security provided via the identity provider",
     img: Img4,
+    cardImg: tableau
   },
 ];
 
@@ -85,7 +93,7 @@ const DataHomePage = () => {
                   <Image
                     objectFit="cover"
                     maxW={{ base: "100%", sm: "200px" }}
-                    src={cardImg}
+                    src={item.cardImg}
                     alt="CardImg"
                   />
 
