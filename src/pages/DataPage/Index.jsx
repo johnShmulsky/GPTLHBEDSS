@@ -12,7 +12,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import cardImg from "../../media/cardImg.jpg";
 import DataCardModal from "../../Components/Common/DataCardModal";
 import Img1 from "../../media/stats.png";
 import Img2 from "../../media/img2.png";
