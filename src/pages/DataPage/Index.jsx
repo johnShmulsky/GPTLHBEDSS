@@ -14,6 +14,10 @@ import {
 import React, { useEffect, useState } from "react";
 import DataCardModal from "../../Components/Common/DataCardModal";
 import LoadingSpinner from "../../LoadingSpinner";
+import pbi from "../../media/PowerBi.png";
+import staticImg from "../../media/Static.png";
+import linelist from "../../media/LineList.png";
+import tableau from "../../media/Tableau.png";
 
 const DataHomePage = () => {
   const [clickedData, setClickedData] = useState({});
@@ -24,6 +28,13 @@ const DataHomePage = () => {
   const handleCardClick = (item) => {
     setClickedData(item);
     onOpen();
+  };
+
+  const image_Assets = {
+    img1: pbi,
+    img2: linelist,
+    img3: staticImg,
+    Img4: tableau,
   };
 
   useEffect(() => {
@@ -65,7 +76,7 @@ const DataHomePage = () => {
                   <Image
                     objectFit="cover"
                     maxW={{ base: "100%", sm: "200px" }}
-                    src={item.cardImg}
+                    src={image_Assets[item.cardImg]}
                     alt="CardImg"
                   />
 
