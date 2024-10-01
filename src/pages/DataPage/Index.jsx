@@ -11,66 +11,39 @@ import {
   Tooltip,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DataCardModal from "../../Components/Common/DataCardModal";
-import Img1 from "../../media/stats.png";
-import Img2 from "../../media/img2.png";
-import Img3 from "../../media/img3.png";
-import Img4 from "../../media/img4.png";
-import pbi from "../../media/PowerBi.png";  
-import staticImg from "../../media/Static.png";
-import linelist from "../../media/LineList.png";
-import tableau from "../../media/Tableau.png";
-
-const demoData = [
-  {
-    id: 1,
-    title: "Power BI Dashboard",
-    subTitle: "Sample Dashboard with disease rates",
-    desc: "Power BI Dashboards, powered and goverend by fabric, can be dynamically shown here",
-    img: Img1,
-    cardImg: pbi
-  },
-  {
-    id: 2,
-    title: "Line List",
-    subTitle: "Sample Line Data",
-    desc: "Line List data sets produced via Fabric can be displayed, explored, and exported by credentialed users",
-    img: Img2,
-    cardImg: linelist
-  },
-  {
-    id: 3,
-    title: "Static Report Content",
-    subTitle: "Pictures, Brochures, or PDF presentations of compiled data and reports",
-    desc: "Non-interactive published material can be disseminated as well",
-    img: Img3,
-    cardImg: staticImg
-  },
-  {
-    id: 4,
-    title: "Tableau Dashboard",
-    subTitle: "Example Table 1",
-    desc: "Server hosted dashboards and reports with security provided via the identity provider",
-    img: Img4,
-    cardImg: tableau
-  },
-];
+import LoadingSpinner from "../../LoadingSpinner";
 
 const DataHomePage = () => {
   const [clickedData, setClickedData] = useState({});
+  const [cardData, setCardData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleCardClick = (item) => {
     setClickedData(item);
     onOpen();
   };
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch("/api/getData")
+      .then((response) => response.json())
+      .then((json) => {
+        setCardData(json);
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
+  }, []);
+  console.log(cardData);
   return (
     <Box position="relative">
       <Flex width="100%">
         <Box width="100%" height="100%" p={4}>
+          {isLoading && <LoadingSpinner />}
           <SimpleGrid columns={3} spacing={4}>
-            {demoData.map((item, index) => (
+            {cardData.map((item, index) => (
               <Tooltip
                 key={index}
                 label={item.desc}
