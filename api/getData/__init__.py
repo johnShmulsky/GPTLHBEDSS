@@ -30,7 +30,7 @@ default_json = [
     'subTitle': "Pictures, Brochures, or PDF presentations of compiled data and reports",
     'desc': "Non-interactive published material can be disseminated as well",
     'img': 'Img3',
-    'cardImg': 'static',
+    'cardImg': 'staticImg',
     'authGroup':'anonymous'
   },
   {
