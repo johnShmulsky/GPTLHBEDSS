@@ -31,9 +31,9 @@ const DataHomePage = () => {
   };
 
   const image_Assets = {
-    img1: pbi,
-    img2: linelist,
-    img3: staticImg,
+    Img1: pbi,
+    Img2: linelist,
+    Img3: staticImg,
     Img4: tableau,
   };
 

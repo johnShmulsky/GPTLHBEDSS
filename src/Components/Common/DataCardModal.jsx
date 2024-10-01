@@ -19,10 +19,10 @@ import Img4 from "../../media/img4.png";
 // eslint-disable-next-line react/prop-types
 const DataCardModal = ({ isOpen, onClose, data }) => {
   const images = {
-    img1: Img1,
-    img2: Img2,
-    img3: Img3,
-    img4: Img4,
+    Img1: Img1,
+    Img2: Img2,
+    Img3: Img3,
+    Img4: Img4,
   };
   return (
     <div>
