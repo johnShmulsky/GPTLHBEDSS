@@ -52,7 +52,7 @@ def process(input_json, userRoles):
     
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    headersAsDict = {'x-ms-client-principal':'test'}
+    headersAsDict = dict(req.headers)
     clientPrincipal64=headersAsDict.get('x-ms-client-principal','')
     base64_bytes = clientPrincipal64.encode("ascii")
     principal_string_bytes = base64.b64decode(base64_bytes)
