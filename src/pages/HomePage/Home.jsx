@@ -95,7 +95,7 @@ const Home = () => {
         >
           <Box position="absolute" bottom={20} zIndex="100" color="white">
             <Heading as="h1" textAlign="center" fontSize="55px">
-              Electronic <br /> Disease Surveillance System
+              GPTEC <br /> Digital Resource Library
             </Heading>
           </Box>
         </Box>
