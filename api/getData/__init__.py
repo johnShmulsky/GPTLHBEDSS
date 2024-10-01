@@ -3,6 +3,7 @@ import logging
 import azure.functions as func
 import base64
 import copy
+from AppUtils import AuthUtils as utils
 
 default_json = [
   {
@@ -52,11 +53,5 @@ def process(input_json, userRoles):
     
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    headersAsDict = dict(req.headers)
-    clientPrincipal64=headersAsDict.get('x-ms-client-principal','')
-    base64_bytes = clientPrincipal64.encode("ascii")
-    principal_string_bytes = base64.b64decode(base64_bytes)
-    principal_string = principal_string_bytes.decode("ascii")
-    principal = json.loads(principal_string)
-    return func.HttpResponse(json.dumps(process(default_json, principal.get('userRoles',[])),indent=4))
+    return func.HttpResponse(json.dumps(process(default_json, utils.getUserRoles(req)),indent=4))
 
