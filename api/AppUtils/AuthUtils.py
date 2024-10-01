@@ -13,5 +13,5 @@ def getPrincipal(req):
 def getUserRoles(req):
     try:
         return getPrincipal(req)['userRoles']
-  except:
+    except:
         return ['anonymous']
