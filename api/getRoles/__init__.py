@@ -3,7 +3,7 @@ import copy
 import azure.functions as func
 
 def getRoles(req):
-  roles = ['test']
+  roles = ['test', 'authenticated', 'anonymous']
   return roles
 
 
