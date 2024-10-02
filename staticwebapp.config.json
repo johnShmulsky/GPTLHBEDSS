@@ -37,7 +37,7 @@
         },
         "login": {
           "loginParameters": [
-            "scope=profile"
+            "scope=openid"
           ]
         }
       }
