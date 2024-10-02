@@ -10,6 +10,7 @@ import {
 import Home from "./pages/HomePage/Home";
 import PatientPage from "./pages/Case";
 import DataHomePage from "./pages/DataPage/Index";
+import ProtectedRoute from "./utils/ProtectedRoute";
 
 function App() {
   return (
@@ -19,7 +20,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/index.html" />} />
           <Route path="/index.html" element={<Home />} />
-          <Route path="/Cases" element={<PatientPage />} />
+          <Route
+            path="/Cases"
+            element={
+              <ProtectedRoute>
+                <PatientPage />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/Data" element={<DataHomePage />} />
         </Routes>
       </Router>

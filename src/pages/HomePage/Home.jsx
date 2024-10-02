@@ -5,12 +5,11 @@ import LoadingSpinner from "../../LoadingSpinner";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [userData, setUserData] = useState(null);
   const handleLogin = () => {
-    console.log("hello login with spinner");
     window.location.href = "/.auth/login/aad";
     setIsLoading(true);
   };
-  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
@@ -18,6 +17,7 @@ const Home = () => {
       .then((response) => response.json())
       .then((json) => {
         setUserData(json);
+        localStorage.setItem("AuthenticatedUser", json);
         setIsLoading(false);
       })
       .catch(() => setIsLoading(false));
