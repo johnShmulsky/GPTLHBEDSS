@@ -37,7 +37,8 @@
         },
         "login": {
           "loginParameters": [
-            "scope=openid"
+            "nameClaimType":"email",
+            "scopes":["openid","profile"]  
           ]
         }
       }
