@@ -43,7 +43,7 @@
         },
         "login": {
           "loginParameters": [
-            "scope=https://graph.microsoft.com/directory.read"
+            "scope=https://graph.microsoft.com/User.Read"
           ]
         }
       }
