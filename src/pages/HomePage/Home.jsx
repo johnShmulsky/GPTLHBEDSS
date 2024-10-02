@@ -17,7 +17,7 @@ const Home = () => {
       .then((response) => response.json())
       .then((json) => {
         setUserData(json);
-        localStorage.setItem("AuthenticatedUser", json);
+        localStorage.setItem("AuthenticatedUser", JSON.stringify(json));
         setIsLoading(false);
       })
       .catch(() => setIsLoading(false));
