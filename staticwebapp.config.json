@@ -27,6 +27,7 @@
     }
   ],
  "auth": {
+    "rolesSource": "/api/GetRoles",
     "identityProviders": {
       "azureActiveDirectory": {
         "registration": {
@@ -34,6 +35,11 @@
           "clientIdSettingName": "AZURE_CLIENT_ID",
           "clientSecretSettingName": "AZURE_CLIENT_SECRET_APP_SETTING_NAME"
         },
+        "login": {
+          "loginParameters": [
+            "scope=openid"
+          ]
+        }
       }
     }
   }
