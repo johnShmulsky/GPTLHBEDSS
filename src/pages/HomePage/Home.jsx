@@ -65,7 +65,7 @@ const Home = () => {
                   color="black"
                 >
                   {userData?.userRoles[0]},{userData?.userRoles[1]}
-                  {userData.map((role) => (
+                  {userData.userRoles.map((role) => (
                     <p>{role}</p>
                   ))}
                 </Text>
