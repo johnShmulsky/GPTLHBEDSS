@@ -37,7 +37,7 @@
         },
         "login": {
           "loginParameters": [
-            "scope=https://graph.microsoft.com/User.Read"
+            "scope=https://graph.microsoft.com/profile"
           ]
         }
       }
