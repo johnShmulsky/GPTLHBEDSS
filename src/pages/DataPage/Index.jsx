@@ -31,10 +31,10 @@ const DataHomePage = () => {
   };
 
   const image_Assets = {
-    Img1: pbi,
-    Img2: linelist,
-    Img3: staticImg,
-    Img4: tableau,
+    pbi: pbi,
+    linelist: linelist,
+    staticImg: staticImg,
+    tableau: tableau,
   };
 
   useEffect(() => {
