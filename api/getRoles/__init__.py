@@ -8,4 +8,4 @@ def getRoles(req):
 
 
 def main(req):
-  return func.HttpResponse(json.dumps(getRoles(req)),indent=4))
+  return func.HttpResponse(json.dumps(getRoles(req),indent=4))
