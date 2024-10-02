@@ -36,10 +36,8 @@
           "clientSecretSettingName": "AZURE_CLIENT_SECRET_APP_SETTING_NAME"
         },
         "login": {
-          "loginParameters": [
             "nameClaimType":"email",
             "scopes":["openid","profile"]  
-          ]
         }
       }
     }
