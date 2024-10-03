@@ -20,7 +20,7 @@ async def isUserInGroup(groupId, bearerToken):
       if response.status != 200:
         return str(response.status)
       userData = await response.json()   
-      return True
+      return 'addrole'
   return str('notcalled')    
   
 
