@@ -19,7 +19,8 @@ async def isUserInGroup(groupId, bearerToken):
     async with client.get( endpoint,headers=headers, params=params) as response:
       if response.status != 200:
         userData = await response.json()   
-        return str(userData.get('error',{"message":"noErrorObject"}).get('message'.replace(' ',''),'noMessage'))
+        return 'fail'
+        #return str(userData.get('error',{"message":"noErrorObject"}).get('message'.replace(' ',''),'noMessage'))
       userData = await response.json()   
       return 'addrole'
   return str('notcalled')    
