@@ -14,7 +14,7 @@ def getAccessToken(req):
     accessToken = claims['accessToken']
     return "pass"
   except Exception as ex:
-    return(ex.message)
+    return("fail")
 
 
 def getRoles(req):
