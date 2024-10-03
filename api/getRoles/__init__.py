@@ -10,7 +10,8 @@ default_roles= [
 
 def getAccessToken(req):
   try:
-    claims = reg.get_json()
+    claims = req.get_json()
+    accessToken = claims['accessToken']
     return "pass"
   except Exception as ex:
     return "fail"
