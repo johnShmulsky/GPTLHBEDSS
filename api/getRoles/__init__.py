@@ -35,4 +35,5 @@ async def getRoles(token):
 async def main(req: func.HttpRequest) -> func.HttpResponse:
   claims = req.get_json()
   accessToken = claims['accessToken']
-  return func.HttpResponse(json.dumps(getRoles(accessToken),indent=4))
+  roles = await getRoles(accessToken)
+  return func.HttpResponse(json.dumps(roles,indent=4))
