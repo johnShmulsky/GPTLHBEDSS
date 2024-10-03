@@ -64,9 +64,8 @@ const Home = () => {
                   fontWeight={600}
                   color="black"
                 >
-                  {userData?.userRoles[0]},{userData?.userRoles[1]}
-                  {userData.userRoles.map((role) => (
-                    <p>{role}</p>
+                  {userData.userRoles.map((role, index) => (
+                    <p key={index}>{role}</p>
                   ))}
                 </Text>
               </Box>
