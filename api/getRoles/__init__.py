@@ -2,10 +2,10 @@ import json
 import copy
 import azure.functions as func
 
-default_roles= [
+default_roles= {
   '12345678':'oglala',
   
-]
+}
 
 
 def getAccessToken(req):
@@ -13,7 +13,7 @@ def getAccessToken(req):
     claims = req.get_json()
     accessToken = claims['accessToken']
     return "pass"
-  except Exception as ex:
+  except:
     return "fail"
 
 
