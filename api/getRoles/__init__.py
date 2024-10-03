@@ -18,7 +18,7 @@ async def isUserInGroup(groupId, bearerToken):
   async with aiohttp.ClientSession() as client:
     async with client.get( endpoint,headers=headers, params=params) as response:
       if response.status != 200:
-        return str(response.status)
+        return str(response.text)
       userData = await response.json()   
       return 'addrole'
   return str('notcalled')    
