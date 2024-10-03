@@ -19,7 +19,7 @@ async def isUserInGroup(groupId, bearerToken):
     async with client.get( endpoint,headers=headers, params=params) as response:
       if response.status != 200:
         userData = await response.json()   
-        error = userData.get('error',{"message":"noErrorObject"}).get('message'.replace(' ',''),'noMessage')
+        error = userData.get('error',{"message":"noErrorObject"}).get('message','noMessage').replace(' ','')
         return str(len(error))
         #return str(userData.get('error',{"message":"noErrorObject"}).get('message'.replace(' ',''),'noMessage'))
       userData = await response.json()   
