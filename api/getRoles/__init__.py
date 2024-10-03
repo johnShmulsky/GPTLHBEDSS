@@ -18,21 +18,21 @@ async def isUserInGroup(groupId, bearerToken):
   async with aiohttp.ClientSession() as client:
     async with client.get( endpoint,headers=headers, params=params) as response:
       if response.status != 200:
-        userData = await response.json()   
-        error = userData.get('error',{"message":"noErrorObject"}).get('message','noMessage').replace(' ','').replace(":","")[0:25]
-        return error
-        #return str(userData.get('error',{"message":"noErrorObject"}).get('message'.replace(' ',''),'noMessage'))
-      userData = await response.json()   
-      return 'addrole'
-  return str('notcalled')    
+        return False
+      userData = await response.json()  
+      for value in userData.get('value',[]):
+        if value.get('id','') == groupId:
+          return True
+      return False
+  return False  
   
 
 async def getRoles(token):
   roles = ['testrole', 'authenticated', 'anonymous']
   for role, groupId in default_roles.items():
-    #if await isUserInGroup(groupId, token):
-    result = await  isUserInGroup(groupId, token)
-    roles.append(result)
+    result = await isUserInGroup(groupId, token)
+    if result:
+      roles.append(role)
   return {"roles":roles}
 
 
