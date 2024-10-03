@@ -2,13 +2,19 @@ import json
 import copy
 import azure.functions as func
 
+default_roles= [
+  '12345678':'oglala',
+  
+]
+
+
 def getAccessToken(req):
   try:
     claims = reg.get_json()
-    accessToken = claims['access_token']
+    accessToken = claims['accessToken']
     return "pass"
-  except:
-    return "fail"
+  except Exception as ex:
+    return(ex.message)
 
 
 def getRoles(req):
