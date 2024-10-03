@@ -3,7 +3,8 @@ import aiohttp
 import azure.functions as func
 
 default_roles= {
-  'access':'97103693-cad6-4409-b44b-fbe4e342e601',
+  'rosebud':'48fb1a49-2fa7-4104-8f40-a0d311c45c6d',
+  'oglala':'9de5a9b9-e09e-4264-adb9-4769c29dc667'
 }
 
 endpoint = 'https://graph.microsoft.com/v1.0/me/memberOf'
