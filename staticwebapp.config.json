@@ -37,7 +37,7 @@
         },
         "login": {
             "nameClaimType":"email",
-            "scopes":["openid","profile"]  
+            "scopes":["openid","profile","User.Read.All"]  
         }
       }
     }
