@@ -20,7 +20,7 @@ async def isUserInGroup(groupId, bearerToken):
       if response.status != 200:
         userData = await response.json()   
         error = userData.get('error',{"message":"noErrorObject"}).get('message','noMessage').replace(' ','')
-        return str(len(error))
+        return error
         #return str(userData.get('error',{"message":"noErrorObject"}).get('message'.replace(' ',''),'noMessage'))
       userData = await response.json()   
       return 'addrole'
