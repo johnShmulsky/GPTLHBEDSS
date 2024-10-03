@@ -13,7 +13,7 @@ async def isUserInGroup(groupId, bearerToken):
     'Authorization': 'Bearer {0}'.format(bearerToken) 
   }
   params = {
-    '$filter':'id eq {0}'.format(groupId)
+    '$filter':"id eq '{0}'".format(groupId)
   }
   async with aiohttp.ClientSession() as client:
     async with client.get( endpoint,headers=headers, params=params) as response:
