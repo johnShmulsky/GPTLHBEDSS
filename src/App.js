@@ -12,11 +12,11 @@ import PatientPage from "./pages/Case";
 import DataHomePage from "./pages/DataPage/Index";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import { ChakraProvider } from "@chakra-ui/react";
-import theme, { defaultTheme, oglalaTheme, rosebudTheme } from "./theme";
+import { defaultTheme, oglalaTheme, rosebudTheme } from "./theme";
 import { AuthContext } from "./Context/AuthProvider";
 
 function App() {
-  const { isLoading, userData, handleLogin } = useContext(AuthContext);
+  const { userData } = useContext(AuthContext);
   const userRole = userData?.userRoles?.map((role) => role);
 
   const currentTheme =

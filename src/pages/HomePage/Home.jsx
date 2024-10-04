@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import bgImage from "../../media/bannerImg.jpg";
 import LoadingSpinner from "../../LoadingSpinner";
 import { AuthContext } from "../../Context/AuthProvider";
