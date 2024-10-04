@@ -5,7 +5,7 @@ import logo from "../../media/images.jpg";
 
 const Navbar = () => {
   return (
-    <Box bg="#460000" color="white" px={4} py={5}>
+    <Box bg="bgColor" color="white" px={4} py={5}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Box display="flex" gap={2} alignItems="center">
           <Image

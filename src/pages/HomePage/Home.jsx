@@ -1,27 +1,31 @@
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import bgImage from "../../media/bannerImg.jpg";
 import LoadingSpinner from "../../LoadingSpinner";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [userData, setUserData] = useState(null);
-  const handleLogin = () => {
-    window.location.href = "/.auth/login/aad";
-    setIsLoading(true);
-  };
+  const { isLoading, userData, handleLogin, loggedInUserRole } =
+    useContext(AuthContext);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [userData, setUserData] = useState(null);
+  // const handleLogin = () => {
+  //   window.location.href = "/.auth/login/aad";
+  //   setIsLoading(true);
+  // };
 
-  useEffect(() => {
-    setIsLoading(true);
-    fetch("/api/getuser")
-      .then((response) => response.json())
-      .then((json) => {
-        setUserData(json);
-        localStorage.setItem("AuthenticatedUser", JSON.stringify(json));
-        setIsLoading(false);
-      })
-      .catch(() => setIsLoading(false));
-  }, []);
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   fetch("/api/getuser")
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       setUserData(json);
+  //       localStorage.setItem("AuthenticatedUser", JSON.stringify(json));
+  //       setIsLoading(false);
+  //     })
+  //     .catch(() => setIsLoading(false));
+  // }, []);
+  console.log("Hello world", loggedInUserRole);
 
   return (
     <Box position="relative">
@@ -64,7 +68,7 @@ const Home = () => {
                   fontWeight={600}
                   color="black"
                 >
-                  {userData.userRoles.map((role, index) => (
+                  {userData?.userRoles.map((role, index) => (
                     <p key={index}>{role}</p>
                   ))}
                 </Text>
@@ -74,7 +78,7 @@ const Home = () => {
                 fontSize="25px"
                 width="200px"
                 height="60px"
-                bg="#460000"
+                bg="bgColor"
                 color="white"
                 _hover={{ background: "#460000" }}
                 onClick={() => handleLogin()}

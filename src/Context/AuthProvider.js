@@ -1,0 +1,34 @@
+import { createContext, useContext, useEffect, useState } from "react";
+export const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [userData, setUserData] = useState(null);
+
+  const handleLogin = () => {
+    setIsLoading(true);
+  };
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch("/api/getuser")
+      .then((response) => response.json())
+      .then((json) => {
+        setUserData(json);
+        localStorage.setItem("AuthenticatedUser", JSON.stringify(json));
+        setIsLoading(false);
+      })
+      .catch(() => setIsLoading(false));
+  }, []);
+
+  const loggedInUserRole = userData?.userRoles?.map((role) => role);
+  // eslint-disable-next-line react/react-in-jsx-scope
+  return (
+    // eslint-disable-next-line react/react-in-jsx-scope
+    <AuthContext.Provider
+      value={{ isLoading, userData, handleLogin, loggedInUserRole }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};

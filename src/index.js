@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from "./theme";
+import { AuthProvider } from "./Context/AuthProvider";
 
 // eslint-disable-next-line react/no-deprecated
 ReactDOM.render(
-  <ChakraProvider theme={theme}>
+  <AuthProvider>
     <App />
-  </ChakraProvider>,
+  </AuthProvider>,
+
   document.getElementById("root")
 );
