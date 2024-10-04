@@ -20,6 +20,10 @@ export const AuthProvider = ({ children }) => {
       })
       .catch(() => setIsLoading(false));
   }, []);
+
+  const userRole = userData?.userRoles?.map((role) => role[2]);
+  console.log(userRole);
+
   // eslint-disable-next-line react/react-in-jsx-scope
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
