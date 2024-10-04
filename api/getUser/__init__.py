@@ -1,11 +1,10 @@
 import azure.functions as func
 import json
 import logging
-import base64
 import os
-import requests
 import msal
 import aiohttp
+from AppUtils import AuthUtils as utils
 
 # config
 scopes = ["https://graph.microsoft.com/.default"]
@@ -17,15 +16,12 @@ oidc_authority = None
 client_id = os.environ['AZURE_CLIENT_ID']
 client_secret = os.environ['AZURE_CLIENT_SECRET_APP_SETTING_NAME']
 
-
 app = msal.ConfidentialClientApplication(
     client_id,
     authority=authority,
     oidc_authority=oidc_authority,
     client_credential=client_secret,
     )
-
-access_token = None
 
 def getAppToken(principalName):
     result = app.acquire_token_silent(scopes, account=None)
@@ -37,12 +33,7 @@ def getAppToken(principalName):
         return None
 
 async def main(req: func.HttpRequest) -> func.HttpResponse:
-    headersAsDict = dict(req.headers)
-    clientPrincipal64=headersAsDict.get('x-ms-client-principal','')
-    base64_bytes = clientPrincipal64.encode("ascii")
-    principal_string_bytes = base64.b64decode(base64_bytes)
-    principal_string = principal_string_bytes.decode("ascii")
-    principal = json.loads(principal_string)
+    principal = utils.getPrincipal(req)
     result = getAppToken(principal['userDetails'])
     userData = {}
     try:
