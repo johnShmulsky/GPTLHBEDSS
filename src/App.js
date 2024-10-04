@@ -17,7 +17,7 @@ import { AuthContext } from "./Context/AuthProvider";
 
 function App() {
   const { userData } = useContext(AuthContext);
-  const userRole = userData?.userRoles?.map((role) => role);
+  const userRole = userData?.userRoles?.map((role) => role[2]);
 
   const currentTheme =
     userRole === "rosebud"
