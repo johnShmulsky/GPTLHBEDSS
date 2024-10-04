@@ -6,6 +6,7 @@ export const AuthProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
 
   const handleLogin = () => {
+    window.location.href = "/.auth/login/aad";
     setIsLoading(true);
     fetch("/api/getuser")
       .then((response) => response.json())
