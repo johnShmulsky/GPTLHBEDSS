@@ -17,14 +17,24 @@ import { AuthContext } from "./Context/AuthProvider";
 
 function App() {
   const { userData } = useContext(AuthContext);
-  const userRole = userData?.userRoles[2];
-  console.log(userData);
-  const currentTheme =
-    userRole === "rosebud"
-      ? rosebudTheme
-      : userRole === "oglala"
-      ? oglalaTheme
-      : defaultTheme;
+  const currentTheme = userData?.userRoles.find((role) => {
+    switch (role) {
+      case "rosebud":
+        return rosebudTheme;
+      case "oglala":
+        return oglalaTheme;
+      default:
+        return defaultTheme;
+    }
+  });
+
+  // console.log(userData);
+  // const currentTheme =
+  //   userRole === "rosebud"
+  //     ? rosebudTheme
+  //     : userRole === "oglala"
+  //     ? oglalaTheme
+  //     : defaultTheme;
 
   return (
     <div className="App">
