@@ -7,10 +7,6 @@ export const AuthProvider = ({ children }) => {
 
   const handleLogin = () => {
     setIsLoading(true);
-  };
-
-  useEffect(() => {
-    setIsLoading(true);
     fetch("/api/getuser")
       .then((response) => response.json())
       .then((json) => {
@@ -19,9 +15,13 @@ export const AuthProvider = ({ children }) => {
         setIsLoading(false);
       })
       .catch(() => setIsLoading(false));
-  }, []);
+  };
 
-  const loggedInUserRole = userData?.userRoles?.map((role) => role);
+  //   useEffect(() => {
+  //     setIsLoading(true);
+  //   }, []);
+
+  const loggedInUserRole = userData?.userRoles?.map((role) => role[2]);
   // eslint-disable-next-line react/react-in-jsx-scope
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
