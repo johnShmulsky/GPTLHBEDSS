@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -8,6 +8,9 @@ export const AuthProvider = ({ children }) => {
   const handleLogin = () => {
     window.location.href = "/.auth/login/aad";
     setIsLoading(true);
+  };
+  useEffect(() => {
+    setIsLoading(true);
     fetch("/api/getuser")
       .then((response) => response.json())
       .then((json) => {
@@ -16,15 +19,11 @@ export const AuthProvider = ({ children }) => {
         setIsLoading(false);
       })
       .catch(() => setIsLoading(false));
-  };
-
-  const loggedInUserRole = userData?.userRoles?.map((role) => role[2]);
+  }, []);
   // eslint-disable-next-line react/react-in-jsx-scope
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
-    <AuthContext.Provider
-      value={{ isLoading, userData, handleLogin, loggedInUserRole }}
-    >
+    <AuthContext.Provider value={{ isLoading, userData, handleLogin }}>
       {children}
     </AuthContext.Provider>
   );
