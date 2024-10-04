@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -16,10 +16,6 @@ export const AuthProvider = ({ children }) => {
       })
       .catch(() => setIsLoading(false));
   };
-
-  //   useEffect(() => {
-  //     setIsLoading(true);
-  //   }, []);
 
   const loggedInUserRole = userData?.userRoles?.map((role) => role[2]);
   // eslint-disable-next-line react/react-in-jsx-scope

@@ -70,8 +70,8 @@ const DataHomePage = () => {
                   direction={{ base: "column", sm: "row" }}
                   overflow="hidden"
                   //   variant="outline"
-                  border="1px solid #2E72B9"
-                  bg="#2E72B9"
+                  border="1px solid bgColor"
+                  bg="bgColor"
                 >
                   <Image
                     objectFit="cover"
