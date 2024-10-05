@@ -6,6 +6,21 @@ import msal
 import aiohttp
 from AppUtils import AuthUtils as utils
 
+default_json = {
+    'oglala':'Oglala Sioux Tribe',
+    'rosebud':'Rosebud Sioux Tribe',
+    'turtle':'Turtle Mountain Band of Chippewa Indians',
+    'lowerbrule':'Lower Brule Sioux Tribe'
+    }
+
+def getTribalDisplay(roles):
+    tribalDisplays = []
+    for role in roles:
+        mapped = default_json.get(role,None)
+        if mapped:
+            tribalDisplays.append(mapped)
+    return tribalDisplays
+
 # config
 scopes = ["https://graph.microsoft.com/.default"]
 endpoint=  "https://graph.microsoft.com/v1.0/users/{0}"
@@ -45,4 +60,6 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
        return func.HttpResponse(ex.message)     
         
     principal['displayName']=userData['displayName']
+    principal['tribalDisplay']=getTribalDisplay(principal['userRoles'])
+
     return func.HttpResponse(json.dumps(principal,indent=4))
