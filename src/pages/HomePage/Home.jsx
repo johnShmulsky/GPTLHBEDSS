@@ -80,7 +80,7 @@ const Home = () => {
                 height="60px"
                 bg="bgColor"
                 color="white"
-                _hover={{ background: "#460000" }}
+                _hover={{ background: "bgColor" }}
                 onClick={() => handleLogin()}
                 disabled={isLoading}
               >

@@ -93,7 +93,7 @@ const PatientTable = () => {
             bg="transparent"
             fontSize="18px"
             textAlign="center"
-            border="1px solid bgCOlor"
+            border="1px solid bgColor"
             color="bgColor"
             _hover={{
               background: "bgColor",
@@ -108,7 +108,7 @@ const PatientTable = () => {
       <Box>
         <Table borderBottom="1.5px solid black" fontSize="13px">
           <Thead>
-            <Tr borderBottom="1.5px solid gray" bg="BgColor" fontSize="10px">
+            <Tr borderBottom="1.5px solid gray" bg="bgColor" fontSize="10px">
               <Th color="#FFF">Name</Th>
               <Th color="#FFF">Home Phone</Th>
               <Th color="#FFF">Street</Th>
