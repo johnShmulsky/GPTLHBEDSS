@@ -68,7 +68,7 @@ const Home = () => {
                   fontWeight={600}
                   color="black"
                 >
-                  {userData?.userRoles.map((role, index) => (
+                  {userData?.tribalDisplay.map((role, index) => (
                     <p key={index}>{role}</p>
                   ))}
                 </Text>
