@@ -165,18 +165,18 @@ function AddPatientModal({ isOpen, onClose }) {
             </Button>
             {step === 1 ? (
               <Button
-                bg="#460000"
+                bg="bgColor"
                 color="white"
-                _hover={{ background: "#460000" }}
+                _hover={{ background: "bgColor" }}
                 onClick={handleNext}
               >
                 Next
               </Button>
             ) : (
               <Button
-                bg="#460000"
+                bg="bgColor"
                 color="white"
-                _hover={{ background: "#460000" }}
+                _hover={{ background: "bgColor" }}
               >
                 Save
               </Button>

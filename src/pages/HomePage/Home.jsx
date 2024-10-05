@@ -68,8 +68,8 @@ const Home = () => {
                   fontWeight={600}
                   color="black"
                 >
-                  {userData?.userRoles.map((role, index) => (
-                    <p key={index}>{role}</p>
+                  {userData?.tribalDisplay.map((tribal, index) => (
+                    <p key={index}>{tribal}</p>
                   ))}
                 </Text>
               </Box>

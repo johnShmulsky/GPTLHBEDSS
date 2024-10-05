@@ -121,10 +121,10 @@ const EditPatientBox = ({ patient }) => {
           <Button
             my={2}
             borderRadius="none"
-            bg="#460000"
+            bg="bgColor"
             color="white"
             _hover={{
-              background: "#460000",
+              background: "bgColor",
             }}
           >
             Save
