@@ -37,7 +37,7 @@
         },
         "login": {
             "nameClaimType":"email",
-            "scopes":["openid","profile","User.Read.All"]  
+            "scopes":["openid","profile","User.Read.All","offline_access"]  
         }
       }
     }
