@@ -37,10 +37,7 @@
         },
         "login": {
             "nameClaimType":"email",
-            "scopes":["openid","profile","User.Read.All","offline_access"],
-            "loginParameters": [
-                 "prompt=login"
-        ]
+            "scopes":["openid","profile","User.Read.All","offline_access"]
         }
       }
     }
