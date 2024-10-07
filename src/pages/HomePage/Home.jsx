@@ -5,27 +5,7 @@ import LoadingSpinner from "../../LoadingSpinner";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Home = () => {
-  const { isLoading, userData, handleLogin, loggedInUserRole } =
-    useContext(AuthContext);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [userData, setUserData] = useState(null);
-  // const handleLogin = () => {
-  //   window.location.href = "/.auth/login/aad";
-  //   setIsLoading(true);
-  // };
-
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   fetch("/api/getuser")
-  //     .then((response) => response.json())
-  //     .then((json) => {
-  //       setUserData(json);
-  //       localStorage.setItem("AuthenticatedUser", JSON.stringify(json));
-  //       setIsLoading(false);
-  //     })
-  //     .catch(() => setIsLoading(false));
-  // }, []);
-  console.log("Hello world", loggedInUserRole);
+  const { isLoading, userData, handleLogin } = useContext(AuthContext);
 
   return (
     <Box position="relative">

@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Box, Flex, Text, Image } from "@chakra-ui/react";
+import { Box, Flex, Text, Image, IconButton } from "@chakra-ui/react";
 import logo from "../../media/images.jpg";
+import { AuthContext } from "../../Context/AuthProvider";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
+  const { handleLogOut, authenTicated } = useContext(AuthContext);
+
   return (
     <Box bg="bgColor" color="white" px={4} py={5}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
@@ -60,6 +64,13 @@ const Navbar = () => {
               Cases
             </Text>
           </Link>
+          {authenTicated && (
+            <IconButton
+              size="sm"
+              icon={<ArrowForwardIcon />}
+              onClick={() => handleLogOut()}
+            />
+          )}
         </Box>
       </Flex>
     </Box>

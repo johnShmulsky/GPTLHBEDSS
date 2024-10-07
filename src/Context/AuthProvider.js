@@ -21,13 +21,25 @@ export const AuthProvider = ({ children }) => {
       .catch(() => setIsLoading(false));
   }, []);
 
-  const userRole = userData?.userRoles?.map((role) => role[2]);
-  console.log(userRole);
+  const handleLogOut = () => {
+    window.location.href = "/.auth/logout/complete";
+    localStorage.removeItem("AuthenticatedUser");
+  };
+
+  const authenTicated = userData?.userRoles.find((role) => {
+    if (role === "authenticated") {
+      return true;
+    } else {
+      return false;
+    }
+  });
 
   // eslint-disable-next-line react/react-in-jsx-scope
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
-    <AuthContext.Provider value={{ isLoading, userData, handleLogin }}>
+    <AuthContext.Provider
+      value={{ isLoading, userData, handleLogin, handleLogOut,authenTicated }}
+    >
       {children}
     </AuthContext.Provider>
   );
