@@ -31,7 +31,7 @@ async def isUserInGroup(groupId, bearerToken):
   
 
 async def getRoles(token):
-  roles = ['authenticated']
+  roles = ['authenticated','testrole']
   for role, groupId in default_roles.items():
     result = await isUserInGroup(groupId, token)
     if result:
