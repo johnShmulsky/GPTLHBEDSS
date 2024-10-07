@@ -39,7 +39,7 @@
             "nameClaimType":"email",
             "scopes":["openid","profile","User.Read.All","offline_access"],
             "loginParameters": [
-                 "prompt=ForceLogin"
+                 "prompt=login"
         ]
         }
       }
