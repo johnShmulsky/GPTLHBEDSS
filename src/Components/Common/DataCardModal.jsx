@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import {
   Button,
-  Image,
+  // Image,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -11,26 +11,32 @@ import {
   ModalOverlay,
 } from "@chakra-ui/react";
 import React from "react";
-import Img1 from "../../media/stats.png";
-import Img2 from "../../media/img2.png";
-import Img3 from "../../media/img3.png";
-import Img4 from "../../media/img4.png";
+// import Img1 from "../../media/stats.png";
+// import Img2 from "../../media/img2.png";
+// import Img3 from "../../media/img3.png";
+// import Img4 from "../../media/img4.png";
 
 // eslint-disable-next-line react/prop-types
 const DataCardModal = ({ isOpen, onClose, data }) => {
-  const images = {
-    Img1: Img1,
-    Img2: Img2,
-    Img3: Img3,
-    Img4: Img4,
-  };
+  // const images = {
+  //   Img1: Img1,
+  //   Img2: Img2,
+  //   Img3: Img3,
+  //   Img4: Img4,
+  // };
+
+  /**
+  TODO: Testing report rendering on server
+  
+  */
+
   return (
     <div>
       <Modal
         blockScrollOnMount={false}
         isOpen={isOpen}
         onClose={onClose}
-        size="lg"
+        size="xl"
       >
         <ModalOverlay />
         <ModalContent>
@@ -40,12 +46,19 @@ const DataCardModal = ({ isOpen, onClose, data }) => {
 
           <ModalCloseButton color="white" />
           <ModalBody>
-            <Image
+            {/* <Image
               src={images[data.img]}
               height="100%"
               width="100%"
               objectFit="cover"
-            />
+            /> */}
+            <iframe
+              src="https://public.tableau.com/views/MainDashboard_15789299527310/GreatPlains2?:embed=y&:display_count=yes"
+              width="100%"
+              height="600"
+              // frameborder="0"
+              allowFullScreen={false}
+            ></iframe>
           </ModalBody>
 
           <ModalFooter>
