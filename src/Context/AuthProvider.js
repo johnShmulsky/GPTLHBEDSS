@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 export const AuthContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [userData, setUserData] = useState(null);
@@ -38,7 +39,7 @@ export const AuthProvider = ({ children }) => {
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
     <AuthContext.Provider
-      value={{ isLoading, userData, handleLogin, handleLogOut,authenTicated }}
+      value={{ isLoading, userData, handleLogin, handleLogOut, authenTicated }}
     >
       {children}
     </AuthContext.Provider>

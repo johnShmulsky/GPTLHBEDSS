@@ -1,12 +1,20 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Box, Flex, Text, Image, IconButton } from "@chakra-ui/react";
-import logo from "../../media/images.jpg";
+import {
+  Box,
+  Flex,
+  Text,
+  Image,
+  Button,
+  useDisclosure,
+} from "@chakra-ui/react";
+import logo from "../../media/logo.jpg";
 import { AuthContext } from "../../Context/AuthProvider";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import SignOutModal from "../Common/SignOutModal";
 
 const Navbar = () => {
-  const { handleLogOut, authenTicated } = useContext(AuthContext);
+  const { authenTicated } = useContext(AuthContext);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Box bg="bgColor" color="white" px={4} py={5}>
@@ -29,7 +37,7 @@ const Navbar = () => {
             Great Plains <br /> Tribal Leaders Health Board
           </Text>
         </Box>
-
+        {<SignOutModal onClose={onClose} isOpen={isOpen} />}
         <Box display="flex" alignItems="center" gap={4}>
           <Link to="/">
             <Text
@@ -64,12 +72,18 @@ const Navbar = () => {
               Cases
             </Text>
           </Link>
-          {authenTicated && (
-            <IconButton
+          {!authenTicated && (
+            <Button
+              bg="bgColor"
+              color="white"
+              _hover={{
+                background: "bgColor",
+              }}
               size="sm"
-              icon={<ArrowForwardIcon />}
-              onClick={() => handleLogOut()}
-            />
+              onClick={() => onOpen()}
+            >
+              Sign out
+            </Button>
           )}
         </Box>
       </Flex>

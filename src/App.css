@@ -71,3 +71,14 @@
   width: 40px;
 }
 
+.spinnerBox {
+  color: rebeccapurple;
+}
+.loadingText {
+  font-size: 25px;
+  text-transform: lowercase;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #9999;
+  margin-top: -3px;
+}
