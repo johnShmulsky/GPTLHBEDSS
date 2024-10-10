@@ -53,6 +53,7 @@ const DataCardModal = ({ isOpen, onClose, data }) => {
               objectFit="cover"
             /> */}
             <iframe
+              title="Report"
               src="https://public.tableau.com/views/MainDashboard_15789299527310/GreatPlains2?:embed=y&:display_count=yes"
               width="100%"
               height="600"
