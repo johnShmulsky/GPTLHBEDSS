@@ -25,8 +25,26 @@ const TableauEmbed = () => {
     }
   }, []);
 
+  useEffect(() => {
+    var divElement = document.getElementById("viz1600378894751");
+    if (divElement) {
+      var vizElement = divElement.getElementsByTagName("div")[0];
+      if (divElement.offsetWidth > 800) {
+        vizElement.style.width = "950px";
+      } else if (divElement.offsetWidth > 500) {
+        vizElement.style.width = "950px";
+      } else {
+        vizElement.style.width = "100%";
+      }
+    }
+  }, []);
+
   return (
-    <div>
+    <div
+      className="tableauPlaceholder"
+      id="viz1600378894751"
+      style={{ position: "relative " }}
+    >
       <div ref={vizRef}></div>
     </div>
   );
