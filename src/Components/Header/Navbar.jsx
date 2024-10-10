@@ -72,7 +72,7 @@ const Navbar = () => {
               Cases
             </Text>
           </Link>
-          {!authenTicated && (
+          {authenTicated && (
             <Button
               bg="bgColor"
               color="white"
