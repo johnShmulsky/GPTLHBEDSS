@@ -26,7 +26,7 @@ const DataCardModal = ({ isOpen, onClose }) => {
         <ModalOverlay />
         <ModalContent minW={isMobile ? "100%" : "1000px"} overscrollY="hidden">
           <ModalBody scrollBehavior="smooth">
-            <Box height={isMobile ? "1500px" : "1300px"}>
+            <Box height={isMobile ? "1550px" : "1300px"}>
               <TableauEmbed />
             </Box>
           </ModalBody>
