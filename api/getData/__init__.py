@@ -28,13 +28,13 @@ default_json = [
   },
   {
     'id': 3,
-    'title': "Static Report Content",
-    'subTitle': "Pictures, Brochures, or PDF presentations of compiled data and reports",
-    'desc': "Non-interactive published material can be disseminated as well",
-    'img': 'Img3',
+    'title': "My Directory",
+    'subTitle': "Files residing in my directory in azure",
+    'desc': "various files that contain information",
     'cardImg': 'staticImg',
-    'type':'image',
-    'authGroup':'anonymous'
+    'type':'directory',
+    'container':'test',
+    'authGroup':'authenticated'
   },
   {
     'id': 4,
