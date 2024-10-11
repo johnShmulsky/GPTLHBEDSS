@@ -7,7 +7,7 @@ import logging
 async def main(req: func.HttpRequest) -> func.HttpResponse:
     try:
         return_json = []
-        container = req.params.get('container')
+        container = 'testContainer'
         blobNames =['test']
         for blobName in blobNames:
             return_json.append({'container':container ,'blob':blobName})
