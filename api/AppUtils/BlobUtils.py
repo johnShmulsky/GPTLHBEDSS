@@ -17,3 +17,9 @@ async def listBlobs(container):
             async for blob in container_client.list_blobs():
                 blobs_list.append(blob.name)
             return blobs_list
+
+async def getBlob(container, blobName):
+    async with BlobServiceClient(account_url=account_url, credential=credential) as blob_service_client:
+        async with blob_service_client.get_blob_client(container=container, blob=blobName) as blob_client:
+            stream = await blob_client.download_blob()
+            return await stream.readall()
