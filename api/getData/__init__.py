@@ -23,6 +23,7 @@ default_json = [
     'desc': "Great Plains Area Demographics Dashboard from 2010",
     'img': 'Img4',
     'type': 'tableau',
+    'cardImg': 'tableau',
     'authGroup':'anonymous'
   },
   {
