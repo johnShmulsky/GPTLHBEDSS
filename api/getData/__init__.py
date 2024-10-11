@@ -13,6 +13,7 @@ default_json = [
     'desc': "Power BI Dashboards, powered and goverend by fabric, can be dynamically shown here",
     'img': 'Img1',
     'cardImg': 'pbi',
+    'type':'image',
     'authGroup':'authenticated'
   },
   {
@@ -31,6 +32,7 @@ default_json = [
     'desc': "Non-interactive published material can be disseminated as well",
     'img': 'Img3',
     'cardImg': 'staticImg',
+    'type':'image',
     'authGroup':'anonymous'
   },
   {
@@ -40,6 +42,7 @@ default_json = [
     'desc': "Server hosted dashboards and reports with security provided via the identity provider",
     'img': 'Img4',
     'cardImg': 'tableau',
+    'type':'image',
     'authGroup':'authenticated'
   },
 ]
