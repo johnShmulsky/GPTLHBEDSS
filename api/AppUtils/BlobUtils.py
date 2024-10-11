@@ -1,4 +1,4 @@
-import azure.identity import ClientSecretCredential
+from azure.identity import ClientSecretCredential
 from azure.storage.blob.aio import BlobServiceClient, ContainerClient
 import os
 
