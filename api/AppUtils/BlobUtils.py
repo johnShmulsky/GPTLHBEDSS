@@ -11,5 +11,9 @@ credential = ClientSecretCredential(tenant_id, client_id, client_secret)
 
 
 async def listBlobs(container):
-    async with ContainerClient(account_url=account_url,container_name=container,credential=credential) as client:
-        return await client.list_blobs()   
+    async with BlobServiceClient(account_url=account_url, credential=token_credential) as blob_Service_client:
+        async with blob_service_client.get_container_client(container) as container_client:
+            blobs_list = []
+            async for blob in container_client.list_blobs():
+                blobs_list.append(blob.name)
+            return blobs_list
