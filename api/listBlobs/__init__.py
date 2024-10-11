@@ -8,7 +8,7 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
     try:
         return_json = []
         container = req.params.get('container')
-        blobNames =['test']
+        blobNames = BlobUtils.listBlobs(container)
         for blobName in blobNames:
             return_json.append({'container':container ,'blob':blobName})
         return func.HttpResponse(json.dumps(return_json,indent=4))
