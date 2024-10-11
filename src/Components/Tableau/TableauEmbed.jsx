@@ -27,7 +27,7 @@ const TableauEmbed = () => {
         }
       };
     }
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     var divElement = document.getElementById("viz1600378894751");
