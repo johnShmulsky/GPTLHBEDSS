@@ -4,7 +4,7 @@ import json
 import logging
 
 
-def main():
+async def main(req: func.HttpRequest) -> func.HttpResponse:
     try:
         container = req.params.get('container')
         blobName = req.params.get('blob')
