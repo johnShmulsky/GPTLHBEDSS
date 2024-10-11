@@ -17,11 +17,11 @@ default_json = [
   },
   {
     'id': 2,
-    'title': "Line List",
-    'subTitle': "Sample Line Data",
-    'desc': "Line List data sets produced via Fabric can be displayed, explored, and exported by credentialed users",
-    'img': 'Img2',
-    'cardImg': 'linelist',
+    'title': "Great Plains Area Demographics Dashboard",
+    'subTitle': "Demographic information",
+    'desc': "Great Plains Area Demographics Dashboard from 2010",
+    'img': 'Img4',
+    'type': 'tableau',
     'authGroup':'anonymous'
   },
   {
