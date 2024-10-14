@@ -14,6 +14,7 @@ const StaticImage = (imageData) => {
     Img3: Img3,
     Img4: Img4,
   };
+  console.log(imageData.img)
 
   return (
              <Image
