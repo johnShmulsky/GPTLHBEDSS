@@ -7,7 +7,7 @@ import Img2 from "../../media/img2.png";
 import Img3 from "../../media/img3.png";
 import Img4 from "../../media/img4.png";
 
-const StaticImage = (imageData) => {
+const StaticImage = ({imageData}) => {
   const images = {    
     Img1: Img1,
     Img2: Img2,
