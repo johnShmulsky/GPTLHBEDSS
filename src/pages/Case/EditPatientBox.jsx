@@ -17,9 +17,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import EditPaitentModal from "./Common/EditPaitentModal";
+import EditPaitentModal from "../../Components/Common/EditPaitentModal";
 import { AddIcon } from "@chakra-ui/icons";
 
+// eslint-disable-next-line react/prop-types
 const EditPatientBox = ({ patient }) => {
   const [tribalLandOption, setTribalLandOption] = useState("no");
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -110,6 +111,7 @@ const EditPatientBox = ({ patient }) => {
               </Tr>
             </Thead>
             <Tbody>
+             
               {patient.TREATMENTS.map((treatment, index) => (
                 <Tr key={index}>
                   <Td>{treatment.MEDICATION.VALUE}</Td>

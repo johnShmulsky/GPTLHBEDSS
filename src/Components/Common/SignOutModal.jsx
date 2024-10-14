@@ -13,8 +13,8 @@ import {
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
 import logo from "../../media/logo.jpg";
-import ReactDOMServer from "react-dom/server";
-import GptchbSpinner from "./GptchbSpinner";
+// import ReactDOMServer from "react-dom/server";
+// import GptchbSpinner from "./GptchbSpinner";
 
 // eslint-disable-next-line react/prop-types
 const SignOutModal = ({ isOpen, onClose }) => {
@@ -46,9 +46,9 @@ const SignOutModal = ({ isOpen, onClose }) => {
                   alignItems: "center",
                   justifyContent: "center",
                 }}
-                srcDoc={ReactDOMServer.renderToString(
-                  <GptchbSpinner text="signing out ..." />
-                )}
+                // srcDoc={ReactDOMServer.renderToString(
+                //   <GptchbSpinner text="signing out ..." />
+                // )}
                 src="/.auth/logout"
               />
             ) : (

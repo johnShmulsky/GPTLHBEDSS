@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const handleLogOut = () => {
-    window.location.href = "/.auth/logout/complete";
+    // window.location.href = "/.auth/logout/complete";
     localStorage.removeItem("AuthenticatedUser");
   };
 

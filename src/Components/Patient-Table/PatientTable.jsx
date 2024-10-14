@@ -27,7 +27,7 @@ import {
 
 import ReactPaginate from "react-paginate";
 import AddPatientModal from "../Common/AddPatientModal";
-import EditPatientBox from "../EditPatientBox";
+import EditPatientBox from "../../pages/Case/EditPatientBox";
 
 const PatientTable = () => {
   const [searchInput, setSearchInput] = useState("");
