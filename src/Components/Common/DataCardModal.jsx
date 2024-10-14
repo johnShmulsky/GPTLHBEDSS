@@ -21,6 +21,8 @@ const images = {
     Img4: Img4,
   };
 
+const isMobile = useMediaQuery("(max-width: 500px)");
+
 const TableauEmbedCard = () => {
   return (
           <ModalContent minW={isMobile ? "100%" : "1000px"} overscrollY="hidden">
@@ -63,8 +65,6 @@ const StaticImageCard = (imageData) => {
 
 // eslint-disable-next-line react/prop-types
 const DataCardModal = ({ isOpen, onClose, data }) => {
-  const isMobile = useMediaQuery("(max-width: 500px)");
-
   return (
     <div>
       <Modal
