@@ -31,7 +31,7 @@ const DataCardModal = ({ isOpen, onClose, data }) => {
   TODO: Testing report rendering on server
   
   */
-
+  console.log(data.type);
   return (
     <div>
       <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
