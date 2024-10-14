@@ -13,6 +13,7 @@ default_json = [
     'desc': "Power BI Dashboards, powered and goverend by fabric, can be dynamically shown here",
     'img': 'Img1',
     'cardImg': 'pbi',
+    'type': 'image',
     'authGroup':'authenticated'
   },
   {
@@ -22,7 +23,8 @@ default_json = [
     'desc': "Line List data sets produced via Fabric can be displayed, explored, and exported by credentialed users",
     'img': 'Img2',
     'cardImg': 'linelist',
-    'authGroup':'anonymous'
+    'type': 'image',
+    'authGroup':'authenticated'
   },
   {
     'id': 3,
@@ -30,6 +32,7 @@ default_json = [
     'subTitle': "Pictures, Brochures, or PDF presentations of compiled data and reports",
     'desc': "Non-interactive published material can be disseminated as well",
     'img': 'Img3',
+    'type': 'image',
     'cardImg': 'staticImg',
     'authGroup':'anonymous'
   },
@@ -38,9 +41,9 @@ default_json = [
     'title': "Tableau Dashboard",
     'subTitle': "Example Table 1",
     'desc': "Server hosted dashboards and reports with security provided via the identity provider",
-    'img': 'Img4',
+    'type': 'tableau',
     'cardImg': 'tableau',
-    'authGroup':'authenticated'
+    'authGroup':'anonymous'
   },
 ]
 
