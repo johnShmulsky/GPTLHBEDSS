@@ -2,3 +2,5 @@ azure-functions
 msal
 requests
 aiohttp
+azure-identity
+azure-storage-blob
