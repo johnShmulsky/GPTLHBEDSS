@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import {
   Button,
+  Image,
   Modal,
   ModalBody,
   ModalCloseButton,
