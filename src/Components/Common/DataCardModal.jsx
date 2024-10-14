@@ -42,12 +42,11 @@ const DataCardModal = ({ isOpen, onClose, data }) => {
               <TableauEmbed />
             </Box>
           </ModalBody>
-        </ModalContent>  ): (          
+        </ModalContent>  ) : (          
         <ModalContent>
           <ModalHeader bg="#2E72B9" color="white">
             {data.title}
           </ModalHeader>
-
           <ModalCloseButton color="white" />
           <ModalBody>
             <Image
@@ -65,7 +64,7 @@ const DataCardModal = ({ isOpen, onClose, data }) => {
               ok
             </Button>
           </ModalFooter>
-        </ModalContent> />) }      
+        </ModalContent>) }      
       </Modal>
     </div>
   );
