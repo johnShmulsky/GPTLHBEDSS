@@ -21,31 +21,37 @@ const images = {
     Img4: Img4,
   };
 
-const isMobile = useMediaQuery("(max-width: 500px)");
 
-const TableauEmbedCard = () => {
+// eslint-disable-next-line react/prop-types
+const DataCardModal = ({ isOpen, onClose, data }) => {
+  const isMobile = useMediaQuery("(max-width: 500px)");
   return (
-          <ModalContent minW={isMobile ? "100%" : "1000px"} overscrollY="hidden">
+    <div>
+      <Modal
+        blockScrollOnMount={true}
+        isOpen={isOpen}
+        onClose={onClose}
+        closeOnOverlayClick={true}
+        scrollBehavior="inside"
+      >
+        <ModalOverlay />
+        { data.type === "tableau" ? (          
+        <ModalContent minW={isMobile ? "100%" : "1000px"} overscrollY="hidden">
           <ModalBody scrollBehavior="smooth">
             <Box height={isMobile ? "1550px" : "1300px"}>
               <TableauEmbed />
             </Box>
           </ModalBody>
-        </ModalContent>  
-  );
-};
-
-const StaticImageCard = (imageData) => {
-  return (
-          <ModalContent>
+        </ModalContent>  ): (          
+        <ModalContent>
           <ModalHeader bg="#2E72B9" color="white">
-            {imageData.title}
+            {data.title}
           </ModalHeader>
 
           <ModalCloseButton color="white" />
           <ModalBody>
             <Image
-              src={images[imageData.img]}
+              src={images[data.img]}
               height="100%"
               width="100%"
               objectFit="cover"
@@ -59,23 +65,7 @@ const StaticImageCard = (imageData) => {
               ok
             </Button>
           </ModalFooter>
-        </ModalContent>
-  );
-};
-
-// eslint-disable-next-line react/prop-types
-const DataCardModal = ({ isOpen, onClose, data }) => {
-  return (
-    <div>
-      <Modal
-        blockScrollOnMount={true}
-        isOpen={isOpen}
-        onClose={onClose}
-        closeOnOverlayClick={true}
-        scrollBehavior="inside"
-      >
-        <ModalOverlay />
-        { data.type === "tableau" ? (<TableauEmbedCard /> ): (<StaticImageCard imageData={data} />) }      
+        </ModalContent> />) }      
       </Modal>
     </div>
   );
