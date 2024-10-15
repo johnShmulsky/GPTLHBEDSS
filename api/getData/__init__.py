@@ -18,12 +18,13 @@ default_json = [
   },
   {
     'id': 2,
-    'title': "Line List",
-    'subTitle': "Sample Line Data",
-    'desc': "Line List data sets produced via Fabric can be displayed, explored, and exported by credentialed users",
+    'title': "My Directory",
+    'subTitle': "test directory data",
+    'desc': "Files of all types added to a container",
     'img': 'Img2',
     'cardImg': 'linelist',
-    'type': 'image',
+    'type': 'directory',
+    'container':'test',
     'authGroup':'authenticated'
   },
   {
@@ -42,6 +43,7 @@ default_json = [
     'subTitle': "Example Table 1",
     'desc': "Server hosted dashboards and reports with security provided via the identity provider",
     'type': 'tableau',
+    'embedd':'https://public.tableau.com/views/MainDashboard_15789299527310/GreatPlains2',
     'cardImg': 'tableau',
     'authGroup':'anonymous'
   },
