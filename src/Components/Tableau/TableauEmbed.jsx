@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import tableau from "tableau-api";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
-const TableauEmbed = () => {
+const TableauEmbed = ({embedData}) => {
   const vizRef = useRef(null);
   const isMobile = useMediaQuery("(max-width: 500px)");
 
@@ -11,7 +11,7 @@ const TableauEmbed = () => {
 
   useEffect(() => {
     const vizUrl =
-      "https://public.tableau.com/views/MainDashboard_15789299527310/GreatPlains2";
+      embedData.embedd;
     const options = {
       width: "100%",
       height: isMobile ? "1550px" : "1300px",
