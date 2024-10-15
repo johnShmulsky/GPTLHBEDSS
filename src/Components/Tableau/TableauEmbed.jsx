@@ -10,8 +10,7 @@ const TableauEmbed = ({embedData}) => {
   console.log(isMobile);
 
   useEffect(() => {
-    const vizUrl =
-      embedData.embedd;
+    const vizUrl = embedData.embedd;
     const options = {
       width: "100%",
       height: isMobile ? "1550px" : "1300px",
