@@ -33,7 +33,7 @@ const DataCardModal = ({ isOpen, onClose, data }) => {
 
           <ModalCloseButton color="white" />
           <ModalBody>
-           { data.type === "tableau" ? (    <TableauEmbed /> ) : ( <StaticImage imageData={data} /> )}
+           { data.type === "tableau" ? (    <TableauEmbed embedData={data} /> ) : ( <StaticImage imageData={data} /> )}
           </ModalBody>
 
           <ModalFooter>
