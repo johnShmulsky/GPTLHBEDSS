@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
 import {
-  Button,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/react";
@@ -28,7 +26,7 @@ const DataCardModal = ({ isOpen, onClose, data }) => {
       <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent minW={isMobile ? "100%" : "1000px"}>
-          <ModalHeader bg="#2E72B9" color="white">
+          <ModalHeader bg="bgColor" color="white">
             {data.title}
           </ModalHeader>
 
@@ -43,20 +41,6 @@ const DataCardModal = ({ isOpen, onClose, data }) => {
             )}
             {/* <Directory /> */}
           </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="red" mr={3} onClick={onClose}>
-              Close
-            </Button>
-            <Button
-              bg="bgColor"
-              color="white"
-              _hover={{ background: "bgColor" }}
-              onClick={onClose}
-            >
-              ok
-            </Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </div>
