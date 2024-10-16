@@ -29,7 +29,7 @@ const Directory = ({ data }) => {
         setIsLoading(false);
       })
       .catch(() => setIsLoading(false));
-  }, []);
+  }, [data]);
   console.log(directoryData);
 
   //   const StaticData = [
