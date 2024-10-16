@@ -39,7 +39,7 @@ default_json = [
   },
   {
     'id': 4,
-    'title': "Tableau Dashboard",
+    'title': "Great Plains Area Demographcs",
     'subTitle': "Example Table 1",
     'desc': "Server hosted dashboards and reports with security provided via the identity provider",
     'type': 'tableau',
