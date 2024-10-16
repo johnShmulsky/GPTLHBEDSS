@@ -12,7 +12,8 @@ import {
 import React from "react";
 import TableauEmbed from "../Tableau/TableauEmbed";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import StaticImage from "../StaticImage/StaticImage"
+import StaticImage from "../StaticImage/StaticImage";
+import Directory from "../Directory/Directory";
 
 // eslint-disable-next-line react/prop-types
 const DataCardModal = ({ isOpen, onClose, data }) => {
@@ -33,14 +34,26 @@ const DataCardModal = ({ isOpen, onClose, data }) => {
 
           <ModalCloseButton color="white" />
           <ModalBody>
-           { data.type === "tableau" ? (    <TableauEmbed embedData={data} /> ) : ( <StaticImage imageData={data} /> )}
+            {data.type === "tableau" ? (
+              <TableauEmbed embedData={data} />
+            ) : data.type === "directory" ? (
+              <Directory data={data} />
+            ) : (
+              <StaticImage imageData={data} />
+            )}
+            {/* <Directory /> */}
           </ModalBody>
 
           <ModalFooter>
             <Button colorScheme="red" mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button colorScheme="blue" onClick={onClose}>
+            <Button
+              bg="bgColor"
+              color="white"
+              _hover={{ background: "bgColor" }}
+              onClick={onClose}
+            >
               ok
             </Button>
           </ModalFooter>
