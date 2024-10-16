@@ -21,7 +21,6 @@ default_json = [
     'title': "My Directory",
     'subTitle': "test directory data",
     'desc': "Files of all types added to a container",
-    'img': 'Img2',
     'cardImg': 'linelist',
     'type': 'directory',
     'container':'test',
