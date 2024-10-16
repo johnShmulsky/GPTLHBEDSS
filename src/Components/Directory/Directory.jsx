@@ -3,7 +3,6 @@ import { DownloadIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
-  Link,
   Table,
   TableContainer,
   Tbody,
@@ -80,7 +79,8 @@ const Directory = ({ data }) => {
                       {directoryItem.blob}
                     </Td>
                     <Td>
-                      <Link
+                      <a
+                        download={directoryItem.blob}
                         href={`/api/getBlob?container=${directoryItem.container}&blob=${directoryItem.blob}`}
                       >
                         <Button
@@ -91,7 +91,7 @@ const Directory = ({ data }) => {
                         >
                           Download
                         </Button>
-                      </Link>
+                      </a>
                     </Td>
                   </Tr>
                 ))}
