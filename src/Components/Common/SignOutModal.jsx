@@ -4,14 +4,16 @@ import {
   Flex,
   Image,
   Modal,
-  ModalBody, ModalCloseButton,
+  ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalOverlay,
   Text,
 } from "@chakra-ui/react";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import logo from "../../media/logo.jpg";
+import Iframe from "react-iframe";
 // import {AuthContext} from "../../Context/AuthProvider";
 // import ReactDOMServer from "react-dom/server";
 // import GptchbSpinner from "./GptchbSpinner";
@@ -28,20 +30,22 @@ const SignOutModal = ({ isOpen, onClose }) => {
     // }, 2000);
   };
 
-
   return (
     <div>
       <Modal isOpen={isOpen} onClose={onClose} isCentered size="sm">
         <ModalOverlay />
-        <ModalCloseButton/>
+        <ModalCloseButton />
         <ModalContent borderRadius="none" height="420px">
           <ModalBody>
             {showIframe ? (
-              <iframe
-                title="sign out frame"
-                height="100%"
+              <Iframe
+                url="/.auth/logout"
                 width="100%"
-                src="https://proud-flower-0e4c3191e.5.azurestaticapps.net/.auth/logout"
+                height="320px"
+                id=""
+                className=""
+                display="block"
+                position="relative"
               />
             ) : (
               <Flex
