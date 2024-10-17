@@ -5,48 +5,39 @@ import {
   Image,
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalOverlay,
   Text,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../../media/logo.jpg";
-import Iframe from "react-iframe";
-// import {AuthContext} from "../../Context/AuthProvider";
-// import ReactDOMServer from "react-dom/server";
-// import GptchbSpinner from "./GptchbSpinner";
+import { AuthContext } from "../../Context/AuthProvider";
+import LoadingSpinner from "../../LoadingSpinner";
 
 // eslint-disable-next-line react/prop-types
 const SignOutModal = ({ isOpen, onClose }) => {
-  const [showIframe, setShowIframe] = useState(false);
-  // const { handleLogOut, handleLogoutClose } = useContext(AuthContext);
+  const [isLoading, setIsLoading] = useState(false);
+  const { handleLogOut } = useContext(AuthContext);
 
   const handleYes = () => {
-    setShowIframe(true);
-    // setTimeout(() => {
-    //   handleLogOut();
-    // }, 2000);
+    setIsLoading(true);
+    window.open("/.auth/logout", "_blnk");
+    setTimeout(() => {
+      handleLogOut();
+      setIsLoading(false);
+      onClose();
+    }, 1500);
   };
 
   return (
     <div>
       <Modal isOpen={isOpen} onClose={onClose} isCentered size="sm">
         <ModalOverlay />
-        <ModalCloseButton />
         <ModalContent borderRadius="none" height="420px">
           <ModalBody>
-            {showIframe ? (
-              <Iframe
-                url="/.auth/logout"
-                width="100%"
-                height="320px"
-                id=""
-                className=""
-                display="block"
-                position="relative"
-              />
+            {isLoading ? (
+              <LoadingSpinner />
             ) : (
               <Flex
                 mt={6}
@@ -72,7 +63,7 @@ const SignOutModal = ({ isOpen, onClose }) => {
             )}
           </ModalBody>
 
-          {!showIframe && (
+          {!isLoading && (
             <ModalFooter>
               <Flex width="100%" gap="5px">
                 <Button
