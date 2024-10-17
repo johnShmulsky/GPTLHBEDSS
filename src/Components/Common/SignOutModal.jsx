@@ -4,14 +4,15 @@ import {
   Flex,
   Image,
   Modal,
-  ModalBody,
+  ModalBody, ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalOverlay,
   Text,
 } from "@chakra-ui/react";
-import React, {  useState } from "react";
+import React, { useState} from "react";
 import logo from "../../media/logo.jpg";
+// import {AuthContext} from "../../Context/AuthProvider";
 // import ReactDOMServer from "react-dom/server";
 // import GptchbSpinner from "./GptchbSpinner";
 
@@ -22,24 +23,17 @@ const SignOutModal = ({ isOpen, onClose }) => {
 
   const handleYes = () => {
     setShowIframe(true);
-
     // setTimeout(() => {
     //   handleLogOut();
     // }, 2000);
   };
 
 
-  const html = `
-  <script>
-  // window.location.href='https://proud-flower-0e4c3191e.5.azurestaticapps.net/.auth/logout'
-  fetch('https://proud-flower-0e4c3191e.5.azurestaticapps.net/.auth/logout')
-</script>
-  `
-
   return (
     <div>
       <Modal isOpen={isOpen} onClose={onClose} isCentered size="sm">
         <ModalOverlay />
+        <ModalCloseButton/>
         <ModalContent borderRadius="none" height="420px">
           <ModalBody>
             {showIframe ? (
@@ -47,10 +41,8 @@ const SignOutModal = ({ isOpen, onClose }) => {
                 title="sign out frame"
                 height="100%"
                 width="100%"
-                // src="https://proud-flower-0e4c3191e.5.azurestaticapps.net/.auth/logout"
-                //   src="/.auth/logout"
-                  srcDoc={html}
-                />
+                src="https://proud-flower-0e4c3191e.5.azurestaticapps.net/.auth/logout"
+              />
             ) : (
               <Flex
                 mt={6}
