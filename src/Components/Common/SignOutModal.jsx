@@ -10,8 +10,7 @@ import {
   ModalOverlay,
   Text,
 } from "@chakra-ui/react";
-import React, { useContext, useState } from "react";
-import { AuthContext } from "../../Context/AuthProvider";
+import React, {  useState } from "react";
 import logo from "../../media/logo.jpg";
 // import ReactDOMServer from "react-dom/server";
 // import GptchbSpinner from "./GptchbSpinner";
@@ -19,15 +18,23 @@ import logo from "../../media/logo.jpg";
 // eslint-disable-next-line react/prop-types
 const SignOutModal = ({ isOpen, onClose }) => {
   const [showIframe, setShowIframe] = useState(false);
-  const { handleLogOut } = useContext(AuthContext);
+  // const { handleLogOut, handleLogoutClose } = useContext(AuthContext);
 
   const handleYes = () => {
     setShowIframe(true);
-    setTimeout(() => {
-      handleLogOut();
-      onClose();
-    }, 3000);
+
+    // setTimeout(() => {
+    //   handleLogOut();
+    // }, 2000);
   };
+
+
+  const html = `
+  <script>
+  // window.location.href='https://proud-flower-0e4c3191e.5.azurestaticapps.net/.auth/logout'
+  fetch('https://proud-flower-0e4c3191e.5.azurestaticapps.net/.auth/logout')
+</script>
+  `
 
   return (
     <div>
@@ -38,19 +45,12 @@ const SignOutModal = ({ isOpen, onClose }) => {
             {showIframe ? (
               <iframe
                 title="sign out frame"
-                style={{
-                  border: "none",
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-                // srcDoc={ReactDOMServer.renderToString(
-                //   <GptchbSpinner text="signing out ..." />
-                // )}
-                src="/.auth/logout"
-              />
+                height="100%"
+                width="100%"
+                // src="https://proud-flower-0e4c3191e.5.azurestaticapps.net/.auth/logout"
+                //   src="/.auth/logout"
+                  srcDoc={html}
+                />
             ) : (
               <Flex
                 mt={6}
