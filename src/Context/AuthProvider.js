@@ -23,9 +23,13 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const handleLogOut = () => {
-    // window.location.href = "/.auth/logout/complete";
+    window.location.href = "/.auth/logout";
     localStorage.removeItem("AuthenticatedUser");
   };
+
+  const handleLogoutClose=()=>{
+    window.location.href = "/.auth/logout/complete";
+  }
 
   const authenTicated = userData?.userRoles.find((role) => {
     if (role === "authenticated") {
@@ -39,7 +43,7 @@ export const AuthProvider = ({ children }) => {
   return (
     // eslint-disable-next-line react/react-in-jsx-scope
     <AuthContext.Provider
-      value={{ isLoading, userData, handleLogin, handleLogOut, authenTicated }}
+      value={{ isLoading, userData, handleLogin, handleLogOut, authenTicated,handleLogoutClose }}
     >
       {children}
     </AuthContext.Provider>
