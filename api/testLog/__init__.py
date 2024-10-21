@@ -20,5 +20,5 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
     try:
         await sendLogs()
     except Exception as ex:
-       return func.HttpResponse(ex.message)  
+        return func.HttpResponse(ex.message)  
     return func.HttpResponse("success")
