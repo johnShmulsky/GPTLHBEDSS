@@ -1,5 +1,4 @@
 from azure.storage.blob.aio import BlobServiceClient, ContainerClient
-import os
 from AppUtils import AuthUtils
 
 account_url = "https://sagpthdedsstest.blob.core.windows.net"
