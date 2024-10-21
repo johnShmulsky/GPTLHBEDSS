@@ -4,7 +4,7 @@ from AppUtils import AuthUtils
 from azure.monitor.ingestion.aio import LogsIngestionClient
 
 
-async def send_logs():
+async def sendLogs():
     endpoint = os.environ["DATA_COLLECTION_ENDPOINT"]
     rule_id = os.environ["LOGS_DCR_RULE_ID"]
     body: List[MutableMapping[str, str]] = [
