@@ -16,7 +16,7 @@ async def send_logs():
         await client.upload(rule_id=rule_id, stream_name=os.environ["LOGS_DCR_STREAM_NAME"], logs=body)
     await credential.close()
 
-def main(req: func.HttpRequest) -> func.HttpResponse:
+async def main(req: func.HttpRequest) -> func.HttpResponse:
     try:
         sendLogs()
     except Exception as ex:
