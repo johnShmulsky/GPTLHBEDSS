@@ -4,3 +4,4 @@ requests
 aiohttp
 azure-identity
 azure-storage-blob
+azure-monitor-ingestion
