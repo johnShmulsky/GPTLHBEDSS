@@ -1,4 +1,5 @@
 import os
+import azure.functions as func
 from typing import List, MutableMapping
 from AppUtils import AuthUtils
 from azure.monitor.ingestion.aio import LogsIngestionClient
