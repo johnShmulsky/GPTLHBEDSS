@@ -1,7 +1,7 @@
 import json
 import aiohttp
 import azure.functions as func
-import LogUtils
+from AppUtils import LogUtils
 
 default_roles= {
   'rosebud':'48fb1a49-2fa7-4104-8f40-a0d311c45c6d',
