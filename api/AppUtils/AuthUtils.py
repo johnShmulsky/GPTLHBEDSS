@@ -1,5 +1,14 @@
 import base64
 import json
+import os
+from azure.identity.aio import ClientSecretCredential
+
+client_id = os.environ['AZURE_CLIENT_ID']
+client_secret = os.environ['AZURE_CLIENT_SECRET_APP_SETTING_NAME']
+credential = ClientSecretCredential(tenant_id, client_id, client_secret)
+
+def getCredential():
+    return credential
 
 
 def getPrincipal(req):
