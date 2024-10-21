@@ -44,5 +44,5 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
   claims = req.get_json()
   accessToken = claims['accessToken']
   roles = await getRoles(accessToken)
-  await LogUtils.sendLogs(req, 'Login', '','logged with roles:{0}'.format(json.dumps(roles)))
+  await LogUtils.sendLogs(claims['userDetails'], 'Login', '','logged with roles:{0}'.format(json.dumps(roles)))
   return func.HttpResponse(json.dumps(roles,indent=4))
