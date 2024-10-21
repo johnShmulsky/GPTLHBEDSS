@@ -1,4 +1,4 @@
-from AppUtils import BlobUtils
+from AppUtils import BlobUtils,LogUtils
 import azure.functions as func
 import json
 import logging
@@ -11,6 +11,7 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
         blobNames = await BlobUtils.listBlobs(container)
         for blobName in blobNames:
             return_json.append({'container':container ,'blob':blobName})
+        await LogUtils.logEvent(req,'listBlobs',container,'User accessed directory {0}'.format(container))
         return func.HttpResponse(json.dumps(return_json,indent=4))
     except Exception as e:
         return func.HttpResponse(e.message)
