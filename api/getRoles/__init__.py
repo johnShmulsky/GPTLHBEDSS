@@ -1,6 +1,7 @@
 import json
 import aiohttp
 import azure.functions as func
+import LogUtils
 
 default_roles= {
   'rosebud':'48fb1a49-2fa7-4104-8f40-a0d311c45c6d',
@@ -43,4 +44,5 @@ async def main(req: func.HttpRequest) -> func.HttpResponse:
   claims = req.get_json()
   accessToken = claims['accessToken']
   roles = await getRoles(accessToken)
+  await LogUtils.sendLogs(req, '', '','logged with roles:{0}'.format(json.dumps(roles)))
   return func.HttpResponse(json.dumps(roles,indent=4))
