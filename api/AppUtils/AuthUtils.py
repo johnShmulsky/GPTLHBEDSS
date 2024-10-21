@@ -3,6 +3,7 @@ import json
 import os
 from azure.identity.aio import ClientSecretCredential
 
+tenant_id = "704bef3c-134c-430e-860d-b9b9baa16039"
 client_id = os.environ['AZURE_CLIENT_ID']
 client_secret = os.environ['AZURE_CLIENT_SECRET_APP_SETTING_NAME']
 credential = ClientSecretCredential(tenant_id, client_id, client_secret)
