@@ -14,11 +14,11 @@ async def send_logs():
     client = LogsIngestionClient(endpoint=endpoint, credential=credential, logging_enable=True)
     async with client:
         await client.upload(rule_id=rule_id, stream_name=os.environ["LOGS_DCR_STREAM_NAME"], logs=body)
-    await credential.close()
+
 
 async def main(req: func.HttpRequest) -> func.HttpResponse:
     try:
-        sendLogs()
+        await sendLogs()
     except Exception as ex:
        return func.HttpResponse(ex.message)  
     return func.HttpResponse("success")
