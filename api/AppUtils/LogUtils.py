@@ -4,11 +4,11 @@ from AppUtils import AuthUtils
 from azure.monitor.ingestion.aio import LogsIngestionClient
 
 
-async def sendLogs(req, objectID, message):
+async def sendLogs(req,eventType,objectID, message):
     endpoint = os.environ["DATA_COLLECTION_ENDPOINT"]
     rule_id = os.environ["LOGS_DCR_RULE_ID"]
     body: List[MutableMapping[str, str]] = [
-        {"EventType": "AccessTableau", "UserID":AuthUtils.getPrincipal(req)['userDetails'], "ObjectID":objectID, "Message":message}
+        {"EventType": eventType, "UserID":AuthUtils.getPrincipal(req)['userDetails'], "ObjectID":objectID, "Message":message}
     ]
     credential = AuthUtils.getCredential()
     client = LogsIngestionClient(endpoint=endpoint, credential=credential, logging_enable=True)
