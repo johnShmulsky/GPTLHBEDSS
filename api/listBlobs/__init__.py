@@ -7,16 +7,17 @@ import logging
 async def main(req: func.HttpRequest) -> func.HttpResponse:
     container = req.params.get('container')
     principal = AuthUtils.getPrincipal(req)
+    userDetail = principal.get('userDetails','anonymous')
     try:
         return_json = []
         SecurityUtils.canAccessDirectory(container, principal['userRoles'])
         blobNames = await BlobUtils.listBlobs(container)
         for blobName in blobNames:
             return_json.append({'container':container ,'blob':blobName})
-        await LogUtils.sendLogs(principal['userDetails'],'ListBlobs',container,'User accessed directory {0}'.format(container))
+        await LogUtils.sendLogs(userDetail,'ListBlobs',container,'User accessed directory {0}'.format(container))
         return func.HttpResponse(json.dumps(return_json,indent=4))
     except AssertionError:
-        await LogUtils.sendLogs(principal['userDetails'],'UnauthorizedAccess',container,'Unauthorized access attempt made on directory')
+        await LogUtils.sendLogs(userDetail,'UnauthorizedAccess',container,'Unauthorized access attempt made on directory')
         return func.HttpResponse('Unauthorized', status_code=403)
     except Exception as e:
         return func.HttpResponse(e.message)
