@@ -11,6 +11,6 @@ def canAccessCase(caseJson, roles):
     return False
 
 def canAccessDirectory(container, roles):
-    roleCheck = container_security.get(container,'miss')
-    return roleCheck in roles
+    roleCheck = container_security[container]
+    assert roleCheck in roles
 
