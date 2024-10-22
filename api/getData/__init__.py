@@ -46,6 +46,16 @@ default_json = [
     'cardImg': 'tableau',
     'authGroup':'anonymous'
   },
+  {
+    'id': 5,
+    'title': "Rosebud Sioux Tribe Directory",
+    'subTitle': "Rosebud Sioux Tribe directory data",
+    'desc': "Files of all types added to the container",
+    'cardImg': 'linelist',
+    'type': 'directory',
+    'container':'rst',
+    'authGroup':'rosebud'
+  },
 ]
 
 def process(input_json, userRoles):
