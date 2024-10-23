@@ -10,7 +10,8 @@ default_json = {
     'oglala':'Oglala Sioux Tribe',
     'rosebud':'Rosebud Sioux Tribe',
     'turtle':'Turtle Mountain Band of Chippewa Indians',
-    'lowerbrule':'Lower Brule Sioux Tribe'
+    'lowerbrule':'Lower Brule Sioux Tribe',
+    'cheyenneriver':'Cheyenne River Sioux Tribe'
     }
 
 def getTribalDisplay(roles):
