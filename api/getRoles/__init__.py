@@ -7,7 +7,8 @@ default_roles= {
   'rosebud':'48fb1a49-2fa7-4104-8f40-a0d311c45c6d',
   'oglala':'9de5a9b9-e09e-4264-adb9-4769c29dc667',
   'lowerbrule':'cf31ae3e-9804-4e75-ad03-28431e35b18a',
-  'turtle':'1ab7e6aa-69d4-4d2d-a4be-a357d31e2e72'
+  'turtle':'1ab7e6aa-69d4-4d2d-a4be-a357d31e2e72',
+  'cheyenneriver':'6b89dc30-cbee-4970-ba75-7c0eb23e0460'
 }
 
 endpoint = 'https://graph.microsoft.com/v1.0/me/memberOf'
