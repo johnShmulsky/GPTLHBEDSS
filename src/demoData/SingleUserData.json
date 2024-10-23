@@ -1,0 +1,118 @@
+{
+  "FIRST_NAME": {
+    "MESSAGE": "First Name",
+    "TYPE": "String",
+    "VALUE": "John"
+  },
+  "LAST_NAME": {
+    "MESSAGE": "Last Name",
+    "TYPE": "String",
+    "VALUE": "Doe"
+  },
+  "HOMEPHONE": {
+    "MESSAGE": "Home Phone Number",
+    "TYPE": "Phone",
+    "VALUE": "605-555-5555"
+  },
+  "CITY": {
+    "MESSAGE": "City",
+    "TYPE": "String",
+    "VALUE": "Rapid City"
+  },
+  "STREET": {
+    "MESSAGE": "Street",
+    "TYPE": "String",
+    "VALUE": "100 First Avenue"
+  },
+  "COUNTY": {
+    "MESSAGE": "County of residence at time of morbidity",
+    "TYPE": "String",
+    "VALUE": "Pennington County"
+  },
+  "POSTAL_CODE": {
+    "MESSAGE": "Postal Code",
+    "TYPE": "String",
+    "VALUE": "57703"
+  },
+  "ON_TRIBAL_LAND": {
+    "MESSAGE": "Living on Tribal Lands",
+    "TYPE": "String",
+    "VALUE": "No"
+  },
+  "TRIBAL_LAND_SPECIFY": {
+    "MESSAGE": "Tribal Desingation",
+    "TYPE": "String",
+    "VALUE": "Oglala Lakota"
+  },
+  "TREATMENTS_HEADER": {
+    "MESSAGE": "Treatment Section",
+    "TYPE": "SectionHeader",
+    "VALUE": null
+  },
+  "TREATMENTS": [
+    {
+      "TREATMENT_DATE": {
+        "MESSAGE": "Date of Treatment",
+        "TYPE": "Date",
+        "VALUE": "01/01/2024"
+      },
+      "MEDICATION": {
+        "MESSAGE": "Medication Administered",
+        "TYPE": "Dropdown",
+        "ENUM": [
+          {
+            "TEXT": "Rifampin",
+            "CODE": "68180-659"
+          },
+          {
+            "TEXT": "Ethambutol",
+            "CODE": "53808-0977-1"
+          }
+        ],
+        "VALUE": "Ethambutol"
+      }
+    },
+    {
+      "TREATMENT_DATE": {
+        "MESSAGE": "Date of Treatment",
+        "TYPE": "Date",
+        "VALUE": "01/08/2024"
+      },
+      "MEDICATION": {
+        "MESSAGE": "Medication Administered",
+        "TYPE": "Dropdown",
+        "ENUM": [
+          {
+            "TEXT": "Rifampin",
+            "CODE": "68180-659"
+          },
+          {
+            "TEXT": "Ethambutol",
+            "CODE": "53808-0977-1"
+          }
+        ],
+        "VALUE": "Rifampin"
+      }
+    }
+  ],
+  "INVESTIGATIONS_HEADER": {
+    "MESSAGE": "Labs Section",
+    "TYPE": "SectionHeader",
+    "VALUE": null
+  },
+  "Type": {
+    "MESSAGE": "Disease Type",
+    "TYPE": "String",
+    "VALUE": "Active Tuberculosis"
+  },
+  "id": {
+    "MESSAGE": "Case ID",
+    "TYPE": "String",
+    "VALUE": "12345678"
+  },
+  "_ts": {
+    "MESSAGE": "Last Update",
+    "TYPE": "EpochTime",
+    "VALUE": "1725652012"
+  }
+}

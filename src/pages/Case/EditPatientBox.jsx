@@ -1,12 +1,9 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import {
   Box,
   Button,
   IconButton,
-  Input,
-  Radio,
-  RadioGroup,
-  SimpleGrid,
-  Stack,
   Table,
   Tbody,
   Td,
@@ -16,17 +13,22 @@ import {
   Tr,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import EditPaitentModal from "../../Components/Common/EditPaitentModal";
 import { AddIcon } from "@chakra-ui/icons";
+import FormComponent from "../../Components/SharedComponent/FormComponent";
 
 // eslint-disable-next-line react/prop-types
 const EditPatientBox = ({ patient }) => {
-  const [tribalLandOption, setTribalLandOption] = useState("no");
+  // const [tribalLandOption, setTribalLandOption] = useState("no");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleAddMedication = () => {
     onOpen();
+  };
+
+  const handleFormSubmit = (data) => {
+    console.log("Hello", data);
   };
 
   return (
@@ -36,7 +38,7 @@ const EditPatientBox = ({ patient }) => {
       p={5}
       //   bg="#eff6f9"
     >
-      <SimpleGrid columns={4} spacing={5}>
+      {/* <SimpleGrid columns={4} spacing={5}>
         <Box>
           <Text mb={1}>First Name</Text>
           <Input placeholder="Enter your last name" size="md" />
@@ -91,7 +93,8 @@ const EditPatientBox = ({ patient }) => {
             <Input placeholder="Enter your tribal land" size="md" w="100%" />
           </Box>
         )}
-      </SimpleGrid>
+      </SimpleGrid> */}
+      <FormComponent data={patient} handleFormSubmit={handleFormSubmit} />
       <Box my={5}>
         <Text fontSize="20px">
           Treatments
@@ -111,7 +114,7 @@ const EditPatientBox = ({ patient }) => {
               </Tr>
             </Thead>
             <Tbody>
-             
+              // eslint-disable-next-line react/prop-types
               {patient.TREATMENTS.map((treatment, index) => (
                 <Tr key={index}>
                   <Td>{treatment.MEDICATION.VALUE}</Td>
