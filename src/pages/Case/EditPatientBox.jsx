@@ -114,7 +114,6 @@ const EditPatientBox = ({ patient }) => {
               </Tr>
             </Thead>
             <Tbody>
-              // eslint-disable-next-line react/prop-types
               {patient.TREATMENTS.map((treatment, index) => (
                 <Tr key={index}>
                   <Td>{treatment.MEDICATION.VALUE}</Td>
