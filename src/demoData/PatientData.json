@@ -3,7 +3,7 @@
     "FIRST_NAME": {
       "MESSAGE": "First Name",
       "TYPE": "String",
-      "VALUE": "Sally"
+      "VALUE": "John"
     },
     "LAST_NAME": {
       "MESSAGE": "Last Name",
@@ -18,32 +18,37 @@
     "CITY": {
       "MESSAGE": "City",
       "TYPE": "String",
-      "VALUE": "Pine Ridge"
+      "VALUE": "Rapid City"
     },
     "STREET": {
       "MESSAGE": "Street",
       "TYPE": "String",
-      "VALUE": "1 Dakota Ave"
+      "VALUE": "100 First Avenue"
     },
     "COUNTY": {
       "MESSAGE": "County of residence at time of morbidity",
       "TYPE": "String",
-      "VALUE": "Oglala Lakota"
+      "VALUE": "Pennington County"
     },
     "POSTAL_CODE": {
       "MESSAGE": "Postal Code",
       "TYPE": "String",
-      "VALUE": "57770"
+      "VALUE": "57703"
     },
     "ON_TRIBAL_LAND": {
       "MESSAGE": "Living on Tribal Lands",
       "TYPE": "String",
-      "VALUE": "Yes"
+      "VALUE": "No"
     },
     "TRIBAL_LAND_SPECIFY": {
       "MESSAGE": "Tribal Desingation",
       "TYPE": "String",
       "VALUE": "Oglala Lakota"
+    },
+    "TREATMENTS_HEADER": {
+      "MESSAGE": "Treatment Section",
+      "TYPE": "SectionHeader",
+      "VALUE": null
     },
     "TREATMENTS": [
       {
@@ -54,7 +59,17 @@
         },
         "MEDICATION": {
           "MESSAGE": "Medication Administered",
-          "TYPE": "String",
+          "TYPE": "Dropdown",
+          "ENUM": [
+            {
+              "TEXT": "Rifampin",
+              "CODE": "68180-659"
+            },
+            {
+              "TEXT": "Ethambutol",
+              "CODE": "53808-0977-1"
+            }
+          ],
           "VALUE": "Ethambutol"
         }
       },
@@ -66,11 +81,26 @@
         },
         "MEDICATION": {
           "MESSAGE": "Medication Administered",
-          "TYPE": "String",
+          "TYPE": "Dropdown",
+          "ENUM": [
+            {
+              "TEXT": "Rifampin",
+              "CODE": "68180-659"
+            },
+            {
+              "TEXT": "Ethambutol",
+              "CODE": "53808-0977-1"
+            }
+          ],
           "VALUE": "Rifampin"
         }
       }
     ],
+    "INVESTIGATIONS_HEADER": {
+      "MESSAGE": "Labs Section",
+      "TYPE": "SectionHeader",
+      "VALUE": null
+    },
     "Type": {
       "MESSAGE": "Disease Type",
       "TYPE": "String",
@@ -79,7 +109,7 @@
     "id": {
       "MESSAGE": "Case ID",
       "TYPE": "String",
-      "VALUE": "21345678"
+      "VALUE": "12345678"
     },
     "_ts": {
       "MESSAGE": "Last Update",
@@ -92,12 +122,12 @@
     "FIRST_NAME": {
       "MESSAGE": "First Name",
       "TYPE": "String",
-      "VALUE": "Sally"
+      "VALUE": "Smith"
     },
     "LAST_NAME": {
       "MESSAGE": "Last Name",
       "TYPE": "String",
-      "VALUE": "Doe"
+      "VALUE": "Franklin"
     },
     "HOMEPHONE": {
       "MESSAGE": "Home Phone Number",
@@ -107,32 +137,37 @@
     "CITY": {
       "MESSAGE": "City",
       "TYPE": "String",
-      "VALUE": "Pine Ridge"
+      "VALUE": "Rapid City"
     },
     "STREET": {
       "MESSAGE": "Street",
       "TYPE": "String",
-      "VALUE": "1 Dakota Ave"
+      "VALUE": "100 First Avenue"
     },
     "COUNTY": {
       "MESSAGE": "County of residence at time of morbidity",
       "TYPE": "String",
-      "VALUE": "Oglala Lakota"
+      "VALUE": "Pennington County"
     },
     "POSTAL_CODE": {
       "MESSAGE": "Postal Code",
       "TYPE": "String",
-      "VALUE": "57770"
+      "VALUE": "57703"
     },
     "ON_TRIBAL_LAND": {
       "MESSAGE": "Living on Tribal Lands",
       "TYPE": "String",
-      "VALUE": "Yes"
+      "VALUE": "No"
     },
     "TRIBAL_LAND_SPECIFY": {
       "MESSAGE": "Tribal Desingation",
       "TYPE": "String",
       "VALUE": "Oglala Lakota"
+    },
+    "TREATMENTS_HEADER": {
+      "MESSAGE": "Treatment Section",
+      "TYPE": "SectionHeader",
+      "VALUE": null
     },
     "TREATMENTS": [
       {
@@ -143,7 +178,17 @@
         },
         "MEDICATION": {
           "MESSAGE": "Medication Administered",
-          "TYPE": "String",
+          "TYPE": "Dropdown",
+          "ENUM": [
+            {
+              "TEXT": "Rifampin",
+              "CODE": "68180-659"
+            },
+            {
+              "TEXT": "Ethambutol",
+              "CODE": "53808-0977-1"
+            }
+          ],
           "VALUE": "Ethambutol"
         }
       },
@@ -155,11 +200,26 @@
         },
         "MEDICATION": {
           "MESSAGE": "Medication Administered",
-          "TYPE": "String",
+          "TYPE": "Dropdown",
+          "ENUM": [
+            {
+              "TEXT": "Rifampin",
+              "CODE": "68180-659"
+            },
+            {
+              "TEXT": "Ethambutol",
+              "CODE": "53808-0977-1"
+            }
+          ],
           "VALUE": "Rifampin"
         }
       }
     ],
+    "INVESTIGATIONS_HEADER": {
+      "MESSAGE": "Labs Section",
+      "TYPE": "SectionHeader",
+      "VALUE": null
+    },
     "Type": {
       "MESSAGE": "Disease Type",
       "TYPE": "String",
@@ -168,7 +228,7 @@
     "id": {
       "MESSAGE": "Case ID",
       "TYPE": "String",
-      "VALUE": "123656321"
+      "VALUE": "5869358"
     },
     "_ts": {
       "MESSAGE": "Last Update",

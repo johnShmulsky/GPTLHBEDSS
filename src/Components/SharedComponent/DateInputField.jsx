@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   FormControl,
   FormLabel,
@@ -7,36 +7,35 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { SingleDatepicker } from "chakra-dayzed-datepicker";
-import { isValid } from "date-fns";
+import { CalendarIcon } from "@chakra-ui/icons";
 
-const DateInputField = ({ label, field, error, existingDate }) => {
-  const [date, setDate] = useState(
-    existingDate && isValid(new Date(existingDate))
-      ? new Date(existingDate)
-      : new Date()
-  );
+const DateInputField = ({ data, keyName, errors, setValue }) => {
+  const [date, setDate] = useState(new Date(data.VALUE));
 
-  useEffect(() => {
-    if (existingDate && isValid(new Date(existingDate))) {
-      setDate(new Date(existingDate));
-    }
-  }, [existingDate]);
+  const handleDateChange = (newDate) => {
+    setDate(newDate);
+    setValue(keyName, newDate);
+  };
 
   return (
-    <Box width="100%">
-      <FormControl isInvalid={!!error}>
-        <FormLabel>{label}</FormLabel>
+    <FormControl isInvalid={errors[keyName]}>
+      <FormLabel>{data.MESSAGE}</FormLabel>
+      <Box display="flex" alignItems="center" gap="2px" position="relative">
+        <Box position="absolute" top="20%" right="0" zIndex="1010">
+          <CalendarIcon
+            color="bgColor"
+            fontSize="20px"
+            mr={5}
+            _hover={{ color: "bgColor" }}
+          />
+        </Box>
         <SingleDatepicker
           configs={{
-            dateFormat: "MM-dd-yyyy",
+            dateFormat: "MM/dd/yyyy",
           }}
-          name={field.name}
+          name={keyName}
           date={date}
-          onDateChange={(newDate) => {
-            setDate(newDate);
-            field.onChange(newDate);
-          }}
-          {...field}
+          onDateChange={handleDateChange}
           propsConfigs={{
             dateNavBtnProps: {
               colorScheme: "bgColor",
@@ -50,15 +49,20 @@ const DateInputField = ({ label, field, error, existingDate }) => {
                   color: "white",
                 },
               },
-
+              isInRangeBtnProps: {
+                color: "yellow",
+              },
               selectedBtnProps: {
+                background: "bgColor",
+                color: "white",
+              },
+              todayBtnProps: {
                 background: "bgColor",
                 color: "white",
               },
             },
             inputProps: {
-              size: "xl",
-              width: "100%",
+              size: "sm",
             },
             popoverCompProps: {
               popoverContentProps: {
@@ -68,15 +72,13 @@ const DateInputField = ({ label, field, error, existingDate }) => {
             },
             calendarPanelProps: {
               wrapperProps: {
-                borderColor: "bgColor",
+                borderColor: "green",
               },
               contentProps: {
                 borderWidth: 0,
-                width: "100%",
               },
               headerProps: {
                 padding: "5px",
-                color: "bgColor",
               },
               dividerProps: {
                 display: "none",
@@ -90,9 +92,11 @@ const DateInputField = ({ label, field, error, existingDate }) => {
             },
           }}
         />
-        {error && <FormErrorMessage>{error.message}</FormErrorMessage>}
-      </FormControl>
-    </Box>
+      </Box>
+      {errors[keyName] && (
+        <FormErrorMessage>{errors[keyName]?.message}</FormErrorMessage>
+      )}
+    </FormControl>
   );
 };
 

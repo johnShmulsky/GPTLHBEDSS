@@ -5,19 +5,20 @@ import {
   FormLabel,
   Input,
   FormErrorMessage,
-  Box,
 } from "@chakra-ui/react";
 
-const InputField = ({ label, field, error }) => {
+const InputField = ({ data, register, keyName, errors }) => {
   return (
-    <Box width="100%">
-      <FormControl isInvalid={!!error}>
-        <FormLabel>{label}</FormLabel>
-        <Input {...field} border={`1px solid black`} />
-
-        {error && <FormErrorMessage>{error?.message}</FormErrorMessage>}
-      </FormControl>
-    </Box>
+    <FormControl isInvalid={errors[keyName]}>
+      <FormLabel>{data.MESSAGE}</FormLabel>
+      <Input
+        {...register(keyName, { required: `${data.MESSAGE} is required` })}
+        defaultValue={data.VALUE}
+      />
+      {errors[keyName] && (
+        <FormErrorMessage>{errors[keyName]?.message}</FormErrorMessage>
+      )}
+    </FormControl>
   );
 };
 
