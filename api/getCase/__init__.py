@@ -7,6 +7,7 @@ noEntry = {
     "TYPE":None
     }
 
+
 default_model = {
     "FIRST_NAME": {
         "MESSAGE": "First Name",
@@ -64,7 +65,27 @@ default_model = {
     "INVESTIGATIONS_HEADER":{
         "MESSAGE":"Labs Section",
         "TYPE":"SectionHeader"
-    },    
+    },
+    "LABS": [
+        {
+            "SPECIMEN_DATE": {
+                "MESSAGE": "Specimen Date",
+                "TYPE": "Date",
+            },
+            "SPECIMEN_SOURCE": {
+                "MESSAGE": "Specimen Source",
+                "TYPE": "String"
+            },
+            "TEST": {
+                "MESSAGE": "Test",
+                "TYPE": "String"
+            },
+            "RESULT": {
+                "MESSAGE": "Result",
+                "TYPE": "String"
+            }
+        }
+    ],
     "Type": {
         "MESSAGE": "Disease Type",
         "TYPE": "String",
@@ -81,6 +102,7 @@ default_model = {
         "VALUE": "1725652012"
     }    
 }
+
 
 default_json = {
     "FIRST_NAME":"John",
@@ -104,10 +126,27 @@ default_json = {
         }
  
     ],
+    "LABS":
+    [
+        {
+            "SPECIMEN_DATE":"04/10/2024",
+            "SPECIMEN_SOURCE":"SPUTUM",
+            "TEST":"SMEAR",
+            "RESULT":"4+"
+        },
+        {
+            "SPECIMEN_DATE":"04/15/2024",
+            "SPECIMEN_SOURCE":"SPUTUM",
+            "TEST":"TB Organism",
+            "RESULT":"Detected"
+        }
+
+    ],
     "Type":"Active Tuberculosis",
     "id":"12345678",
     "_ts":"1725652012"
     }
+
 
 def modelProcess(model,input_json):
     return_json = {}
