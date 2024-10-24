@@ -1,26 +1,23 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+
 import {
   FormControl,
   FormLabel,
-  Select,
+  Input,
   FormErrorMessage,
 } from "@chakra-ui/react";
+import { ConvertToTimeString } from "../../utils/ConvertToTimeString";
 
-const DropdownField = ({ data, register, keyName, errors }) => {
+const GptTimePicker = ({ data, register, keyName, errors }) => {
   return (
     <FormControl isInvalid={errors[keyName]}>
       <FormLabel>{data.MESSAGE}</FormLabel>
-      <Select
+      <Input
+        type="time"
         {...register(keyName, { required: `${data.MESSAGE} is required` })}
-        defaultValue={data.VALUE}
-      >
-        {data?.ENUM?.map((option) => (
-          <option key={option.CODE} value={option.TEXT}>
-            {option.TEXT}
-          </option>
-        ))}
-      </Select>
+        defaultValue={ConvertToTimeString(data.VALUE)}
+      />
       {errors[keyName] && (
         <FormErrorMessage>{errors[keyName]?.message}</FormErrorMessage>
       )}
@@ -28,4 +25,4 @@ const DropdownField = ({ data, register, keyName, errors }) => {
   );
 };
 
-export default DropdownField;
+export default GptTimePicker;
